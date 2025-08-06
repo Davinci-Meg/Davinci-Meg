@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megumu Isshiki - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .project-image {
+            transition: transform 0.3s ease;
+        }
+        .project-image:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="font-bold text-xl">Portfolio</a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#awards" class="text-gray-600 hover:text-gray-900 transition-colors" data-translate="nav-awards">Awards</a>
+                    <a href="#publications" class="text-gray-600 hover:text-gray-900 transition-colors" data-translate="nav-publications">Publications</a>
+                    <a href="#skills" class="text-gray-600 hover:text-gray-900 transition-colors" data-translate="nav-skills">Skills</a>
+                    <a href="#media" class="text-gray-600 hover:text-gray-900 transition-colors" data-translate="nav-media">Media</a>
+                    <a href="#activities" class="text-gray-600 hover:text-gray-900 transition-colors" data-translate="nav-activities">Activities</a>
+                    <a href="#projects" class="text-gray-600 hover:text-gray-900 transition-colors" data-translate="nav-projects">Projects</a>
+                    
+                    <div class="flex items-center space-x-2">
+                        <button onclick="setLanguage('ja')" id="btn-ja" class="px-2 py-1 rounded text-sm transition-colors text-gray-600 hover:text-gray-900">
+                            日本語
+                        </button>
+                        <button onclick="setLanguage('en')" id="btn-en" class="px-2 py-1 rounded text-sm transition-colors bg-blue-600 text-white">
+                            EN
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button onclick="toggleMobile()" class="md:hidden flex items-center justify-center p-2" id="mobile-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden pb-4 hidden">
+                <a href="#awards" class="block py-2 text-gray-600 hover:text-gray-900 transition-colors" data-translate="nav-awards">Awards</a>
+                <a href="#publications" class="block py-2 text-gray-600 hover:text-gray-900 transition-colors" data-translate="nav-publications">Publications</a>
+                <a href="#skills" class="block py-2 text-gray-600 hover:text-gray-900 transition-colors" data-translate="nav-skills">Skills</a>
+                <a href="#media" class="block py-2 text-gray-600 hover:text-gray-900 transition-colors" data-translate="nav-media">Media</a>
+                <a href="#activities" class="block py-2 text-gray-600 hover:text-gray-900 transition-colors" data-translate="nav-activities">Activities</a>
+                <a href="#projects" class="block py-2 text-gray-600 hover:text-gray-900 transition-colors" data-translate="nav-projects">Projects</a>
+                
+                <div class="flex items-center space-x-2 pt-4 border-t border-gray-200 mt-4">
+                    <span class="text-sm text-gray-600">Language:</span>
+                    <button onclick="setLanguage('en')" id="btn-en-mobile" class="px-2 py-1 rounded text-sm transition-colors bg-blue-600 text-white">EN</button>
+                    <button onclick="setLanguage('ja')" id="btn-ja-mobile" class="px-2 py-1 rounded text-sm transition-colors text-gray-600 hover:text-gray-900">日本語</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-4 py-20 hero-bg">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden bg-white shadow-lg">
+                    <img src="public/images/profile-square.jpg" alt="Profile" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Profile Image</div>'">
+                </div>
+                <div class="text-center md:text-left text-white">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-2" data-translate="name">
+                        Megumu Isshiki
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-4" data-translate="name-alt">
+                        一色 潤
+                    </p>
+                    <div class="mb-4">
+                        <p class="text-lg font-semibold mb-2" data-translate="field-interest">Field of interest:</p>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
+                            <span class="px-3 py-1 bg-white bg-opacity-20 text-white rounded-full text-sm">Human Computer Interaction</span>
+                            <span class="px-3 py-1 bg-white bg-opacity-20 text-white rounded-full text-sm">Robotics</span>
+                            <span class="px-3 py-1 bg-white bg-opacity-20 text-white rounded-full text-sm">Umwelt</span>
+                        </div>
+                    </div>
+                    <p class="text-lg mb-6" data-translate="affiliation">
+                        Division of Computer Science and Information Technology, Hokkaido University
+                    </p>
+                    <div class="flex gap-4 justify-center md:justify-start">
+                        <a href="https://github.com/Davinci-Meg" target="_blank" class="text-white hover:text-gray-200 transition-colors">💻 GitHub</a>
+                        <a href="https://www.facebook.com/profile.php?id=100035212147481&sk=about" target="_blank" class="text-white hover:text-gray-200 transition-colors">🕊 Facebook</a>
+                        <a href="https://www.instagram.com/davinci_kcct/" target="_blank" class="text-white hover:text-gray-200 transition-colors">#️⃣ Instagram</a>
+                        <a href="https://youtube.com/@davinci_meg?si=iP2BZzgEu1kXAaiZ" target="_blank" class="text-white hover:text-gray-200 transition-colors">📽️ YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="py-24 px-4 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-blue-600 bg-clip-text text-transparent" data-translate="awards-title">
+                    Awards & Honors
+                </h2>
+                <div class="section-divider w-24 mx-auto"></div>
+            </div>
+            <div class="space-y-12">
+                <!-- 2025 Awards -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-600" data-translate="year-2025">Year 2025</h3>
+                    <div class="space-y-4 stagger-fade">
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2025-1-title">Kobe City College of Technology The 43st Annual English Speaking Competition</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2025-1-prize">1st Prize</p>
+                            <a href="https://www.kobe-kosen.ac.jp/activity/15155/" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2025-2-title">General Incorporated Association Kobe City Machinery and Metal Industry Association</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2025-2-prize">President's Award</p>
+                            <a href="https://www.kobe-kosen.ac.jp/activity/14799/" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2025-3-title">Best Award at the Special Session Poster Presentation of the 87th National Conference of the Information Processing Society of Japan "情報科学の達人 5.0"</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2025-3-prize">Best Award</p>
+                            <a href="https://x.com/Davinci_kcct/status/1913796393355059583" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2025-4-title">Selected as a 5th Cohort Member of the Hybrid Innovator Human Resource Development Program by Ezofrogs</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2025-4-prize">Selected Project under the Ministry of Economy, Trade and Industry's 'AKATSUKI Project'</p>
+                            <a href="https://x.com/ezofrogs/status/1939332444534280270" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2025-5-title">STARTUP HOKKAIDO Collaborative Lecture: 'Develop Future Skills to Understand Social Issues and Thrive in the Future'</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2025-5-prize">Final Pitch - Best Award & MVP Award</p>
+                            <a href="https://hokkaido-innovation-hunter.my.canva.site/futureskills" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2024 Awards -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-600" data-translate="year-2024">Year 2024</h3>
+                    <div class="space-y-4 stagger-fade">
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2024-1-title">Accepted A Paper at The 28th Symposium of the IPSJ INTERACTION 2024</h4>
+                            <div class="mb-4"></div>
+                            <a href="https://www.interaction-ipsj.org/2024/" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2024-2-title">National Institute of Informatics Science and Technology Challenge Program for Next Generation "情報科学の達人プログラム"</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2024-2-prize">5th generation</p>
+                            <a href="https://www.nii.ac.jp/tatsujin/en/" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2024-3-title">Demo Presentation at The 28th Symposium of the IPSJ INTERACTION 2024</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2024-3-prize">Selected in top rankings by general voting</p>
+                            <a href="https://www.interaction-ipsj.org/2024/" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2024-4-title">Project of the Year 2024/3DEXPERIENCE Edu, SOLIDWORKS prize</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2024-4-prize">As a team</p>
+                            <a href="https://youtu.be/M5Tu90vtmLs?si=zgNnyMZ5u8CpYRZi" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2024-5-title">KOSEN Career Entrepreneurship Club 2024 Summer National Convention</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2024-5-prize">SoftBank Award & DEEPCORE Award</p>
+                            <a href="https://x.com/kosen_career/status/1830140405280882815?s=46" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2024-6-title">KANSAI Tech Creator Challenge - Cybernetic Avatar Intensive Course</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2024-6-prize">Kansai Tech Creator Challenge Award (Team)</p>
+                            <a href="https://kansai-tcc.dle.or.jp/ca2024/" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2024-7-title">The Ministry of Economy, Trade and Industry, FY2023 Support Program for the Discovery and Development of Young Talent in Regional Areas, Subsidy Project "AKATSUKI Project"</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2024-7-prize">Selected Initiative: "Kansai Tech Creator Challenge - CA Course" Selection (Selected funding amount: 550,000 yen)</p>
+                            <a href="https://kansai-tcc.dle.or.jp/ca2024/" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2024-8-title">GUGEN2024</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2024-8-prize">Student Award</p>
+                            <a href="https://x.com/GugenTheIdea/status/1867847196626014530" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 Awards -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-600" data-translate="year-2023">Year 2023</h3>
+                    <div class="space-y-4 stagger-fade">
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2023-1-title">Techno-Ocean 2023 Underwater Robot Competition AUV Division</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2023-1-prize">5th Place & Best Presentation Award (Team)</p>
+                            <a href="http://ton23.underwaterrobonet.org/" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2023-2-title">National KOSEN Design Competition - AM Design Division</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2023-2-prize">Excellence Award (Team)</p>
+                            <a href="https://デザコン.com/docs.php?n=bumon4_kekka.pdf" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2023-3-title">The 17th Annual English Presentation Contest for College of Technology in the Kinki District</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2023-3-prize">Special Award</p>
+                            <a href="http://cocet.org/precon/2023/prelim.html" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2023-4-title">National KOSEN GIRLs SDGs x Technology Contest</h4>
+                            <p class="text-blue-600 font-semibold mb-4 text-lg" data-translate="award-2023-4-prize">Diversity & Inclusion Encouragement Award (Team)</p>
+                            <a href="https://gcon.kosen-k.go.jp/news/oDMPkYlf" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2019 Awards -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-600" data-translate="year-2019">Year 2019</h3>
+                    <div class="space-y-4 stagger-fade">
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2019-1-title">Kobe Ambassador Exchange to Seattle 2019</h4>
+                            <div class="mb-4"></div>
+                            <a href="https://www.kobe-kosen.ac.jp/kokusai/" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                            <h4 class="font-bold text-xl mb-3 text-gray-800" data-translate="award-2019-2-title">The 64th YFU Intercultural Exchange Programs (One-year Studying Abroad in Germany)</h4>
+                            <div class="mb-4"></div>
+                            <a href="https://yfu.or.jp/" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-24 px-4 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent" data-translate="publications-title">
+                    Publication
+                </h2>
+                <div class="section-divider w-24 mx-auto"></div>
+            </div>
+            <div class="space-y-6 stagger-fade">
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <p class="text-blue-600 font-medium mb-3" data-translate="pub-1-authors">一色潤, 高田崚介</p>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800" data-translate="pub-1-title">
+                        "3D CAD操作支援のための巻き尺を用いたサイズ感提示デバイスの開発"
+                    </h3>
+                    <p class="text-gray-600 text-lg" data-translate="pub-1-venue">インタラクション2024, 巻, 号, pp. 59 -</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover" id="pub-2" style="display: none;">
+                    <p class="text-blue-600 font-medium mb-3" data-translate="pub-2-authors">森山拓海, 小澤正宜, 清水俊彦, Julien Amar, 酒井昌彦, 尾山匡浩, 田原熙昂, 一色潤, 早稲田一嘉</p>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800" data-translate="pub-2-title">
+                        "植物ロボットによる動作とユーザーの感情想起の関係"
+                    </h3>
+                    <p class="text-gray-600 text-lg" data-translate="pub-2-venue">ロボティクス・メカトロニクス講演会 2025, pp. 1P1-K07</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-24 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-blue-600 bg-clip-text text-transparent" data-translate="skills-title">
+                    Technical Skills
+                </h2>
+                <div class="section-divider w-24 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 stagger-fade">
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <h3 class="font-bold text-2xl mb-6 text-blue-600 flex items-center" data-translate="programming-title">
+                        <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">💻</span>
+                        Programming
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium skill-tag">Python</span>
+                        <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium skill-tag">C#</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <h3 class="font-bold text-2xl mb-6 text-green-600 flex items-center" data-translate="prototyping-title">
+                        <span class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3">🔧</span>
+                        Prototyping
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium skill-tag">Arduino</span>
+                        <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium skill-tag">Fusion360</span>
+                        <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium skill-tag">SolidWorks</span>
+                        <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium skill-tag">Processing</span>
+                        <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium skill-tag">Touch Designer</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <h3 class="font-bold text-2xl mb-6 text-purple-600 flex items-center" data-translate="fabrication-title">
+                        <span class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3">⚙️</span>
+                        Fabrication
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium skill-tag">3D Printing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Coverage Section -->
+    <section id="media" class="py-24 px-4 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent" data-translate="media-title">
+                    Media Coverage
+                </h2>
+                <div class="section-divider w-24 mx-auto"></div>
+            </div>
+            <div class="space-y-6 stagger-fade">
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <p class="text-indigo-600 font-medium mb-3">Dassault Systèmes SolidWorks Corporation</p>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">
+                        "Japan Underwater Robot Team Wins Dassault Systemes POTY2024 SOLIDWORKS Brand Prize"
+                    </h3>
+                    <a href="https://blogs.solidworks.com/teacher/2024/07/japan-underwater-robot-team-wins-solidworks-brand-prize-poty2024.html" target="_blank" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium transition-colors" data-translate="view-article">View Article →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Activities Section -->
+    <section id="activities" class="py-24 px-4 bg-gradient-to-br from-gray-50 to-green-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-green-600 bg-clip-text text-transparent" data-translate="activities-title">
+                    Other Activities
+                </h2>
+                <div class="section-divider w-24 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 stagger-fade">
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <h3 class="font-bold text-lg mb-3 text-gray-800" data-translate="activity-1-title">高専キャリア起業部2024 夏の全国大会 「高専卒業後のキャリアパス、就職 or 大学編入？」</h3>
+                    <p class="text-green-600 font-semibold mb-4" data-translate="activity-1-role">Speaker</p>
+                    <a href="https://x.com/kosen_career/status/1825138675342295134" target="_blank" class="inline-flex items-center text-green-600 hover:text-green-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <h3 class="font-bold text-lg mb-3 text-gray-800" data-translate="activity-2-title">高専キャリア起業部2024 夏の全国大会 「動き出せ！高専生の挑戦記」</h3>
+                    <p class="text-green-600 font-semibold mb-4" data-translate="activity-2-role">Speaker</p>
+                    <a href="https://x.com/kosen_career/status/1828338096297124284" target="_blank" class="inline-flex items-center text-green-600 hover:text-green-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <h3 class="font-bold text-lg mb-3 text-gray-800" data-translate="activity-3-title">DevFest2024 - Kwansai Developers Day</h3>
+                    <p class="text-green-600 font-semibold mb-4" data-translate="activity-3-role">Speaker</p>
+                    <a href="https://x.com/gdgkwansai/status/1869714299440021886" target="_blank" class="inline-flex items-center text-green-600 hover:text-green-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <h3 class="font-bold text-lg mb-3 text-gray-800" data-translate="activity-4-title">高専キャリア2024 冬の全国大会「進学でも、就職でもない選択肢」</h3>
+                    <p class="text-green-600 font-semibold mb-4" data-translate="activity-4-role">Speaker</p>
+                    <a href="https://x.com/kosen_career/status/1870323844982112421" target="_blank" class="inline-flex items-center text-green-600 hover:text-green-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
+                    <h3 class="font-bold text-lg mb-3 text-gray-800" data-translate="activity-5-title">高専キャリア全国大会 2025 SPRING「「1歩目に悩むあなたへ」コンテストで世界はどう広がる？」</h3>
+                    <p class="text-green-600 font-semibold mb-4" data-translate="activity-5-role">Speaker</p>
+                    <a href="https://x.com/kosen_career/status/1897226559351845371" target="_blank" class="inline-flex items-center text-green-600 hover:text-green-800 font-medium transition-colors" data-translate="view-details">View Details →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-4 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent" data-translate="projects-title">
+                    Creations
+                </h2>
+                <div class="section-divider w-24 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/46f72a39-0b15-4ef6-ae17-475b36e527dd.png" alt="Project 1" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-600 font-medium&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/64165834-6e73-406b-8ff6-c5e2ea50ccab.png" alt="Project 2" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/c8c748b9-011c-4930-91f8-ddd67371e0e5.png" alt="Project 3" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/98894f26-edba-4779-bfb7-6f8ae50edede.png" alt="Project 4" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/ced83877-b065-45ab-b6d0-27f0a813468b.png" alt="Project 5" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/3c515c1d-1383-4dd1-b205-1a5e92478c7e.png" alt="Project 6" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/35e20aea-0189-42a5-b301-60602a373736.png" alt="Project 7" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/5c92cf5b-a309-4ea7-9936-7981c248751f.png" alt="Project 8" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/5b246911-83a9-4bb7-9829-7f3ab714622a.png" alt="Project 9" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/9056a3ef-38be-4eda-913b-ef7d4864e3e7.png" alt="Project 10" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/303476bc-88ff-4477-ba51-4671b31cd7f7.png" alt="Project 11" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/05069a2c-1d0b-42b3-93cb-e7db863c895b.png" alt="Project 12" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/2c9e460b-47c6-4624-b831-9fafe29d8c46.png" alt="Project 13" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <!-- Extra image from English version -->
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/96a4a3e0-9875-40d4-b3bf-4b82f5968fc3.png" alt="Project 14" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/robot.png" alt="Robot" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Robot Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/9f16bde3-5847-45c4-b46a-73bacba22bcf.png" alt="Project 15" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Project Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/certificate.png" alt="Certificate" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Certificate Image</div>'">
+                </div>
+                <div class="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+                    <img src="public/images/cover.jpg" alt="Cover" class="w-full h-full object-cover project-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;w-full h-full bg-gray-300 flex items-center justify-center text-gray-600&quot;>Cover Image</div>'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 to-blue-900 text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-blue-200 text-lg">💡 Copyright, Megumu Isshiki, <span data-translate="copyright">All rights reserved</span>.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentLanguage = 'en';
+        let mobileMenuOpen = false;
+        
+        const translations = {
+            en: {
+                // Navigation
+                'nav-awards': 'Awards',
+                'nav-publications': 'Publications',
+                'nav-skills': 'Skills',
+                'nav-media': 'Media',
+                'nav-activities': 'Activities',
+                'nav-projects': 'Projects',
+                
+                // Hero
+                'name': 'Megumu Isshiki',
+                'name-alt': '一色 潤',
+                'field-interest': 'Field of interest:',
+                'affiliation': 'Division of Computer Science and Information Technology, Hokkaido University',
+                
+                // Section titles
+                'awards-title': 'Awards & Honors',
+                'publications-title': 'Publication',
+                'skills-title': 'Technical Skills',
+                'media-title': 'Media Coverage',
+                'activities-title': 'Other Activities',
+                'projects-title': 'Creations',
+                
+                // Year headers
+                'year-2025': 'Year 2025',
+                'year-2024': 'Year 2024',
+                'year-2023': 'Year 2023',
+                'year-2019': 'Year 2019',
+                
+                // Skills
+                'programming-title': 'Programming',
+                'prototyping-title': 'Prototyping',
+                'fabrication-title': 'Fabrication',
+                
+                // UI
+                'view-details': 'View Details',
+                'view-article': 'View Article',
+                'copyright': 'All rights reserved',
+                
+                // Publications
+                'pub-1-authors': 'Megumu Isshiki, Ryosuke Takada',
+                'pub-1-title': '"Development of a Size Sense Presentation Device Using a Tape Measure for 3D CAD Operation Support"',
+                'pub-1-venue': 'INTERACTION 2024, Vol., No., pp. 59 -',
+                'pub-2-authors': 'Takumi Moriyama, Masanobu Ozawa, Toshihiko Shimizu, Julien Amar, Masahiko Sakai, Masahiro Oyama, Kiaki Tahara, Megumu Isshiki, Kazuyoshi Waseda',
+                'pub-2-title': '"Relationship between Plant Robot Movement and User Emotional Response"',
+                'pub-2-venue': 'Robotics and Mechatronics Conference 2025, pp. 1P1-K07',
+                
+                // 2025 Awards
+                'award-2025-1-title': 'Kobe City College of Technology The 43st Annual English Speaking Competition',
+                'award-2025-1-prize': '1st Prize',
+                'award-2025-2-title': 'General Incorporated Association Kobe City Machinery and Metal Industry Association',
+                'award-2025-2-prize': "President's Award",
+                'award-2025-3-title': 'Best Award at the Special Session Poster Presentation of the 87th National Conference of the Information Processing Society of Japan "情報科学の達人 5.0"',
+                'award-2025-3-prize': 'Best Award',
+                'award-2025-4-title': 'Selected as a 5th Cohort Member of the Hybrid Innovator Human Resource Development Program by Ezofrogs',
+                'award-2025-4-prize': "Selected Project under the Ministry of Economy, Trade and Industry's 'AKATSUKI Project'",
+                'award-2025-5-title': "STARTUP HOKKAIDO Collaborative Lecture: 'Develop Future Skills to Understand Social Issues and Thrive in the Future'",
+                'award-2025-5-prize': 'Final Pitch - Best Award & MVP Award',
+                
+                // 2024 Awards
+                'award-2024-1-title': 'Accepted A Paper at The 28th Symposium of the IPSJ INTERACTION 2024',
+                'award-2024-2-title': 'National Institute of Informatics Science and Technology Challenge Program for Next Generation "情報科学の達人プログラム"',
+                'award-2024-2-prize': '5th generation',
+                'award-2024-3-title': 'Demo Presentation at The 28th Symposium of the IPSJ INTERACTION 2024',
+                'award-2024-3-prize': 'Selected in top rankings by general voting',
+                'award-2024-4-title': 'Project of the Year 2024/3DEXPERIENCE Edu',
+                'award-2024-4-prize': 'SOLIDWORKS prize',
+                'award-2024-5-title': 'KOSEN Career Entrepreneurship Club 2024 Summer National Convention',
+                'award-2024-5-prize': 'SoftBank Award & DEEPCORE Award',
+                'award-2024-6-title': 'KANSAI Tech Creator Challenge - Cybernetic Avatar Intensive Course',
+                'award-2024-6-prize': 'Kansai Tech Creator Challenge Award (Team)',
+                'award-2024-7-title': 'The Ministry of Economy, Trade and Industry, FY2023 Support Program for the Discovery and Development of Young Talent in Regional Areas, Subsidy Project "AKATSUKI Project"',
+                'award-2024-7-prize': 'Selected Initiative: "Kansai Tech Creator Challenge - CA Course" Selection (Selected funding amount: 550,000 yen)',
+                'award-2024-8-title': 'GUGEN2024',
+                'award-2024-8-prize': 'Student Award',
+                
+                // 2023 Awards
+                'award-2023-1-title': '5th Place & Best Presentation Award in Techno-Ocean 2023 Underwater Robot Competition AUV division',
+                'award-2023-2-title': 'Excellence Award in National KOSEN Design Competition -AM Design Division',
+                'award-2023-3-title': 'Special Award in The 17th Annual English Presentation Contest for College of Technology in the Kinki District',
+                'award-2023-4-title': 'Diversity & Inclusion Encouragement Award in National KOSEN GIRLs SDGs x Technology Contest',
+                
+                // 2019 Awards
+                'award-2019-1-title': 'Kobe Ambassador Exchange to Seattle 2019',
+                'award-2019-2-title': 'The 64th YFU Intercultural Exchange Programs (One-year Studying Abroad in Germany)',
+                
+                // Activities
+                'activity-1-title': '高専キャリア起業部2024 夏の全国大会 「高専卒業後のキャリアパス、就職 or 大学編入？」',
+                'activity-1-role': 'Speaker',
+                'activity-2-title': '高専キャリア起業部2024 夏の全国大会 「動き出せ！高専生の挑戦記」',
+                'activity-2-role': 'Speaker',
+                'activity-3-title': 'DevFest2024 - Kwansai Developers Day',
+                'activity-3-role': 'Speaker',
+                'activity-4-title': '高専キャリア2024 冬の全国大会「進学でも、就職でもない選択肢」',
+                'activity-4-role': 'Speaker',
+                'activity-5-title': '高専キャリア全国大会 2025 SPRING「「1歩目に悩むあなたへ」コンテストで世界はどう広がる？」',
+                'activity-5-role': 'Speaker',
+            },
+            ja: {
+                // Navigation
+                'nav-awards': 'Awards',
+                'nav-publications': 'Publications',
+                'nav-skills': 'Skills',
+                'nav-media': 'Media',
+                'nav-activities': 'Activities',
+                'nav-projects': 'Projects',
+                
+                // Hero
+                'name': 'Megumu Isshiki',
+                'name-alt': '一色 潤',
+                'field-interest': 'Field of interest:',
+                'affiliation': '北海道大学 工学部 情報エレクトロニクス学科 情報理工学コース',
+                
+                // Section titles
+                'awards-title': 'Awards & Honors',
+                'publications-title': 'Publication',
+                'skills-title': 'Technical Skills',
+                'media-title': 'Media Coverage',
+                'activities-title': 'Other Activities',
+                'projects-title': 'Creations',
+                
+                // Year headers
+                'year-2025': '2025年',
+                'year-2024': '2024年',
+                'year-2023': '2023年',
+                'year-2019': '2019年',
+                
+                // Skills
+                'programming-title': 'Programming',
+                'prototyping-title': 'Prototyping',
+                'fabrication-title': 'Fabrication',
+                
+                // UI
+                'view-details': '詳細を見る',
+                'view-article': '記事を見る',
+                'copyright': 'All rights reserved',
+                
+                // Publications
+                'pub-1-authors': '一色潤, 高田崚介',
+                'pub-1-title': '"3D CAD操作支援のための巻き尺を用いたサイズ感提示デバイスの開発"',
+                'pub-1-venue': 'インタラクション2024, 巻, 号, pp. 59 -',
+                'pub-2-authors': '森山拓海, 小澤正宜, 清水俊彦, Julien Amar, 酒井昌彦, 尾山匡浩, 田原熙昂, 一色潤, 早稲田一嘉',
+                'pub-2-title': '"植物ロボットによる動作とユーザーの感情想起の関係"',
+                'pub-2-venue': 'ロボティクス・メカトロニクス講演会 2025, pp. 1P1-K07',
+                
+                // 2025 Awards
+                'award-2025-1-title': 'Kobe City College of Technology The 43st Annual English Speaking Competition',
+                'award-2025-1-prize': '1st Prize',
+                'award-2025-2-title': '一般社団法人 神戸市機械金属工業会',
+                'award-2025-2-prize': '会長賞',
+                'award-2025-3-title': '情報処理学会第87回全国大会「情報科学の達人 5.0」ポスター発表',
+                'award-2025-3-prize': '最優秀賞',
+                'award-2025-4-title': '一般社団法人Ezofrogs ハイブリッドイノベーター型人財育成プログラム',
+                'award-2025-4-prize': '5期生採択（経産省「AKATSUKIプロジェクト」採択事業）',
+                'award-2025-5-title': 'STARTUP HOKKAIDO連携講義「社会課題を読み解き未来を生き抜くフューチャースキルを育てよう」',
+                'award-2025-5-prize': '最終ピッチ 最優秀賞＆MVP賞',
+                
+                // 2024 Awards
+                'award-2024-1-title': '第28回 一般社団法人情報処理学会シンポジウム INTERACTION2024',
+                'award-2024-2-title': '国立情報学研究所 情報科学の達人プログラム2024',
+                'award-2024-2-prize': '採択',
+                'award-2024-3-title': '第28回 一般社団法人情報処理学会シンポジウム INTERACTION2024',
+                'award-2024-3-prize': 'デモ発表（一般投票にて上位に選出）',
+                'award-2024-4-title': 'Project of the Year 2024/3DEXPERIENCE Edu',
+                'award-2024-4-prize': 'SOLIDWORKS prize',
+                'award-2024-5-title': 'KOSEN Career Entrepreneurship Club 2024 Summer National Convention',
+                'award-2024-5-prize': 'SoftBank Award & DEEPCORE Award',
+                'award-2024-6-title': '関西テック・クリエイター・チャレンジ CA(Cybernetic Avatar)集中講座',
+                'award-2024-6-prize': '関西テック・クリエイター・チャレンジ賞',
+                'award-2024-7-title': '経済産業省 令和5年度 未踏的な地方の若手人材発掘育成支援事業補助金「AKATSUKIプロジェクト」',
+                'award-2024-7-prize': '採択事業「関西テック・クリエイター・チャレンジ CAコース」採択(採択金額: 550,000円)',
+                'award-2024-8-title': '国内最大級ハードウェアコンテストGUGEN2024',
+                'award-2024-8-prize': '学生賞',
+                
+                // 2023 Awards
+                'award-2023-1-title': 'Techno-Ocean 2023 水中ロボット競技会AUV部門',
+                'award-2023-1-prize': '全体5位&ベストプレゼンテーション賞',
+                'award-2023-2-title': '全国高等専門学校デザインコンペティション2023 AMデザイン部門',
+                'award-2023-2-prize': '優秀賞',
+                'award-2023-3-title': '第17回近畿地区高等専門学校英語プレゼンテーションコンテスト',
+                'award-2023-4-title': '全国高等専門学校GIRLsTechnologyコンテスト',
+                'award-2023-4-prize': 'ダイバーシティ＆インクルージョン奨励賞',
+                
+                // 2019 Awards
+                'award-2019-1-title': '2019年度神戸市高校生シアトル派遣プログラム',
+                'award-2019-2-title': '公益財団法人YFU日本国際交流財団 高校生留学派遣プログラム（ドイツへ１年間留学）',
+                
+                // Activities
+                'activity-1-title': '高専キャリア起業部2024 夏の全国大会 「高専卒業後のキャリアパス、就職 or 大学編入？」',
+                'activity-1-role': '登壇',
+                'activity-2-title': '高専キャリア起業部2024 夏の全国大会 「動き出せ！高専生の挑戦記」',
+                'activity-2-role': '登壇',
+                'activity-3-title': 'DevFest2024 - Kwansai Developers Day',
+                'activity-3-role': '登壇',
+                'activity-4-title': '高専キャリア2024 冬の全国大会「進学でも、就職でもない選択肢」',
+                'activity-4-role': '登壇',
+                'activity-5-title': '高専キャリア全国大会 2025 SPRING「「1歩目に悩むあなたへ」コンテストで世界はどう広がる？」',
+                'activity-5-role': '登壇',
+            }
+        };
+        
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update button states
+            updateButtonStates(lang);
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Show/hide second publication based on language
+            const pub2 = document.getElementById('pub-2');
+            if (lang === 'ja') {
+                pub2.style.display = 'block';
+            } else {
+                pub2.style.display = 'none';
+            }
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Save preference
+            localStorage.setItem('portfolio-language', lang);
+        }
+        
+        function updateButtonStates(lang) {
+            const activeClass = 'px-3 py-2 rounded-lg text-sm modern-button';
+            const inactiveClass = 'px-3 py-2 rounded-lg text-sm modern-button inactive';
+            
+            // Desktop buttons
+            document.getElementById('btn-en').className = lang === 'en' ? activeClass : inactiveClass;
+            document.getElementById('btn-ja').className = lang === 'ja' ? activeClass : inactiveClass;
+            
+            // Mobile buttons
+            document.getElementById('btn-en-mobile').className = lang === 'en' ? activeClass : inactiveClass;
+            document.getElementById('btn-ja-mobile').className = lang === 'ja' ? activeClass : inactiveClass;
+        }
+        
+        function toggleMobile() {
+            const menu = document.getElementById('mobile-menu');
+            mobileMenuOpen = !mobileMenuOpen;
+            
+            if (mobileMenuOpen) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
+        
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for saved language preference
+            const savedLang = localStorage.getItem('portfolio-language');
+            if (savedLang && (savedLang === 'en' || savedLang === 'ja')) {
+                setLanguage(savedLang);
+            } else {
+                // Check browser language
+                const browserLang = navigator.language.toLowerCase();
+                if (browserLang.startsWith('ja')) {
+                    setLanguage('ja');
+                } else {
+                    setLanguage('en');
+                }
+            }
+            
+            // Close mobile menu when clicking links
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    toggleMobile();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
