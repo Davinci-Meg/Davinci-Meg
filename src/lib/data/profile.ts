@@ -20,7 +20,7 @@ export const profileData: ProfileData = {
   socialLinks: {
     github: 'https://github.com/Davinci-Meg',
     facebook: 'https://www.facebook.com/profile.php?id=100035212147481&sk=about',
-    instagram: 'https://www.instagram.com/davinci_kcct/',
+    instagram: 'https://www.instagram.com/davinci_meg/',
     youtube: 'https://youtube.com/@davinci_meg?si=iP2BZzgEu1kXAaiZ'
   }
 };

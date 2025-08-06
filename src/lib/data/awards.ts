@@ -48,7 +48,7 @@ export const awardsData: Award[] = [
       en: 'Selected as a 5th Cohort Member of the Hybrid Innovator Human Resource Development Program by Ezofrogs'
     },
     prize: {
-      ja: '5期生採択（経産省「AKATSUKIプロジェクト」採択事業）',
+      ja: '5期生採択',
       en: "Selected Project under the Ministry of Economy, Trade and Industry's 'AKATSUKI Project'"
     },
     url: 'https://x.com/ezofrogs/status/1939332444534280270',
@@ -88,7 +88,7 @@ export const awardsData: Award[] = [
       en: 'National Institute of Informatics Science and Technology Challenge Program for Next Generation "情報科学の達人プログラム"'
     },
     prize: {
-      ja: '採択',
+      ja: '5期生採択',
       en: '5th generation'
     },
     url: 'https://www.nii.ac.jp/tatsujin/en/',
@@ -111,11 +111,11 @@ export const awardsData: Award[] = [
     id: 'award-2024-4',
     title: {
       ja: 'Project of the Year 2024/3DEXPERIENCE Edu',
-      en: 'Project of the Year 2024/3DEXPERIENCE Edu, SOLIDWORKS prize'
+      en: 'Project of the Year 2024/3DEXPERIENCE Edu'
     },
     prize: {
-      ja: 'SOLIDWORKS prize',
-      en: 'As a team'
+      ja: 'SOLIDWORKS 賞',
+      en: 'SOLIDWORKS prize'
     },
     url: 'https://youtu.be/M5Tu90vtmLs?si=zgNnyMZ5u8CpYRZi',
     year: 2024
@@ -141,7 +141,7 @@ export const awardsData: Award[] = [
     },
     prize: {
       ja: '関西テック・クリエイター・チャレンジ賞',
-      en: 'Kansai Tech Creator Challenge Award (Team)'
+      en: 'Kansai Tech Creator Challenge Award'
     },
     url: 'https://kansai-tcc.dle.or.jp/ca2024/',
     year: 2024
@@ -149,11 +149,11 @@ export const awardsData: Award[] = [
   {
     id: 'award-2024-7',
     title: {
-      ja: '経済産業省 令和5年度 未踏的な地方の若手人材発掘育成支援事業補助金「AKATSUKIプロジェクト」',
+      ja: '経済産業省 AKATSUKIプロジェクト採択事業「関西テック・クリエイター・チャレンジ」 CAコース（契約金額：550,000円）',
       en: 'The Ministry of Economy, Trade and Industry, FY2023 Support Program for the Discovery and Development of Young Talent in Regional Areas, Subsidy Project "AKATSUKI Project"'
     },
     prize: {
-      ja: '採択事業「関西テック・クリエイター・チャレンジ CAコース」採択(採択金額: 550,000円)',
+      ja: '採択',
       en: 'Selected Initiative: "Kansai Tech Creator Challenge - CA Course" Selection (Selected funding amount: 550,000 yen)'
     },
     url: 'https://kansai-tcc.dle.or.jp/ca2024/',
@@ -181,7 +181,7 @@ export const awardsData: Award[] = [
     },
     prize: {
       ja: '全体5位&ベストプレゼンテーション賞',
-      en: '5th Place & Best Presentation Award (Team)'
+      en: '5th Place & Best Presentation Award'
     },
     url: 'http://ton23.underwaterrobonet.org/',
     year: 2023
@@ -194,7 +194,7 @@ export const awardsData: Award[] = [
     },
     prize: {
       ja: '優秀賞',
-      en: 'Excellence Award (Team)'
+      en: 'Excellence Award'
     },
     url: 'https://デザコン.com/docs.php?n=bumon4_kekka.pdf',
     year: 2023
@@ -233,8 +233,8 @@ export const awardsData: Award[] = [
       en: 'Kobe Ambassador Exchange to Seattle 2019'
     },
     prize: {
-      ja: '派遣生',
-      en: 'Ambassador'
+      ja: '採択',
+      en: 'Selected'
     },
     url: 'https://www.kobe-kosen.ac.jp/kokusai/',
     year: 2019
@@ -246,8 +246,8 @@ export const awardsData: Award[] = [
       en: 'The 64th YFU Intercultural Exchange Programs (One-year Studying Abroad in Germany)'
     },
     prize: {
-      ja: '派遣生',
-      en: 'Exchange Student'
+      ja: '採択',
+      en: 'Selected'
     },
     url: 'https://yfu.or.jp/',
     year: 2019
