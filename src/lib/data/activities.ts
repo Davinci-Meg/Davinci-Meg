@@ -71,6 +71,6 @@ export const activitiesData: Activity[] = [
       ja: '関西テック・クリエイター・チャレンジブース',
       en: 'Kansai Tech Creator Challenge Booth'
     },
-    url: 'https://x.com/kosen_career/status/1897226559351845371'
+    url: 'https://edu.watch.impress.co.jp/docs/news/2027040.html'
   }
 ];
