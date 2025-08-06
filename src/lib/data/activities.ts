@@ -60,5 +60,17 @@ export const activitiesData: Activity[] = [
       en: 'Speaker'
     },
     url: 'https://x.com/kosen_career/status/1897226559351845371'
+  },
+  {
+    id: 'activity-6',
+    title: {
+      ja: 'デジタル学園祭2025＠EXPO 2025 大阪・関西万博 出展',
+      en: 'Digital Cultural Festival 2025 @ EXPO 2025 Osaka-Kansai World Expo Exhibition'
+    },
+    role: {
+      ja: '関西テック・クリエイター・チャレンジブース',
+      en: 'Kansai Tech Creator Challenge Booth'
+    },
+    url: 'https://x.com/kosen_career/status/1897226559351845371'
   }
 ];
