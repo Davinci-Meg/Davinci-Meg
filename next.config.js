@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
@@ -6,8 +7,8 @@ const nextConfig = {
     unoptimized: true,
   },
   // GitHub Pages用の設定
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/Davinci-Meg' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/Davinci-Meg' : '',
+  assetPrefix: isProd ? '/Davinci-Meg' : '',
+  basePath: isProd ? '/Davinci-Meg' : '',
 };
 
 module.exports = nextConfig;

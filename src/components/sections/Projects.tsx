@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useTranslation } from '@/hooks/useTranslation';
 import { projectsData } from '@/lib/data/projects';
+import { getImagePath } from '@/lib/utils';
 
 export function Projects() {
   const { t, currentLanguage } = useTranslation();
@@ -24,7 +25,7 @@ export function Projects() {
               className="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg"
             >
               <Image
-                src={project.imagePath}
+                src={getImagePath(project.imagePath)}
                 alt={project.alt[currentLanguage]}
                 width={400}
                 height={400}

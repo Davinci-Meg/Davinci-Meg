@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useTranslation } from '@/hooks/useTranslation';
 import { profileData } from '@/lib/data/profile';
+import { getImagePath } from '@/lib/utils';
 
 export function Hero() {
   const { t, currentLanguage } = useTranslation();
@@ -15,7 +16,7 @@ export function Hero() {
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
           <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden bg-white shadow-lg flex-shrink-0">
             <Image
-              src="/images/profile/profile-square.jpg"
+              src={getImagePath('/images/profile/profile-square.jpg')}
               alt="Megumu Isshiki Profile"
               width={256}
               height={256}
