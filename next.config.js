@@ -6,8 +6,8 @@ const nextConfig = {
     unoptimized: true,
   },
   // GitHub Pages用の設定
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/Davinci-Meg' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/Davinci-Meg' : '',
 };
 
 module.exports = nextConfig;
