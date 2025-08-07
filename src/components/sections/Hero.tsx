@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useTranslation } from '@/hooks/useTranslation';
 import { profileData } from '@/lib/data/profile';
 import { getImagePath } from '@/lib/utils';
+import { getBlurDataURL } from '@/lib/imageBlur';
 
 export function Hero() {
   const { t, currentLanguage } = useTranslation();
@@ -22,6 +23,10 @@ export function Hero() {
               height={256}
               className="w-full h-full object-cover"
               priority
+              placeholder="blur"
+              blurDataURL={getBlurDataURL('/images/profile/profile-square.jpg')}
+              sizes="(max-width: 768px) 192px, 256px"
+              quality={85}
             />
           </div>
           

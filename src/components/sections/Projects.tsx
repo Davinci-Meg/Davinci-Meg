@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useTranslation } from '@/hooks/useTranslation';
 import { projectsData } from '@/lib/data/projects';
 import { getImagePath } from '@/lib/utils';
+import { getBlurDataURL } from '@/lib/imageBlur';
 
 export function Projects() {
   const { t, currentLanguage } = useTranslation();
@@ -19,7 +20,7 @@ export function Projects() {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {projectsData.map((project) => (
+          {projectsData.map((project, index) => (
             <div
               key={project.id}
               className="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg"
@@ -30,7 +31,11 @@ export function Projects() {
                 width={400}
                 height={400}
                 className="w-full h-full object-cover project-image"
-                loading="lazy"
+                loading={index < 8 ? "eager" : "lazy"}
+                placeholder="blur"
+                blurDataURL={getBlurDataURL(project.imagePath)}
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                quality={75}
               />
             </div>
           ))}
