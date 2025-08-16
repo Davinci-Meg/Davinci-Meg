@@ -67,6 +67,19 @@ export const awardsData: Award[] = [
     url: 'https://hokkaido-innovation-hunter.my.canva.site/futureskills',
     year: 2025
   },
+  {
+    id: 'award-2025-6',
+    title: {
+      ja: '北海道医療AIビジネスプランコンテスト2025',
+      en: "Hokkaido Medical AI Business Plan Contest 20250"
+    },
+    prize: {
+      ja: 'Bio Engineering Capital賞（第一位）',
+      en: 'Bio Engineering Capital Award (1st Place)'
+    },
+    url: 'https://hsfc.jp/events/119',
+    year: 2025
+  },
   // 2024年
   {
     id: 'award-2024-1',
