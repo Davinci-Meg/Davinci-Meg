@@ -44,7 +44,7 @@ export function Navigation() {
             Portfolio
           </a>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-8">
             {/* Desktop Navigation */}
             <div className="hidden xl:flex items-center space-x-8">
               {navigationItems.map((item) => (

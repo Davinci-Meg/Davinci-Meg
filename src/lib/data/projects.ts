@@ -7,11 +7,6 @@ export const projectsData: Project[] = [
     alt: { ja: 'プロジェクト画像 1', en: 'Project Image 1' }
   },
   {
-    id: 'project-2',
-    imagePath: '/images/projects/64165834-6e73-406b-8ff6-c5e2ea50ccab.png',
-    alt: { ja: 'プロジェクト画像 2', en: 'Project Image 2' }
-  },
-  {
     id: 'project-3',
     imagePath: '/images/projects/c8c748b9-011c-4930-91f8-ddd67371e0e5.png',
     alt: { ja: 'プロジェクト画像 3', en: 'Project Image 3' }
@@ -42,26 +37,6 @@ export const projectsData: Project[] = [
     alt: { ja: 'プロジェクト画像 8', en: 'Project Image 8' }
   },
   {
-    id: 'project-9',
-    imagePath: '/images/projects/5b246911-83a9-4bb7-9829-7f3ab714622a.png',
-    alt: { ja: 'プロジェクト画像 9', en: 'Project Image 9' }
-  },
-  {
-    id: 'project-10',
-    imagePath: '/images/projects/9056a3ef-38be-4eda-913b-ef7d4864e3e7.png',
-    alt: { ja: 'プロジェクト画像 10', en: 'Project Image 10' }
-  },
-  {
-    id: 'project-11',
-    imagePath: '/images/projects/303476bc-88ff-4477-ba51-4671b31cd7f7.png',
-    alt: { ja: 'プロジェクト画像 11', en: 'Project Image 11' }
-  },
-  {
-    id: 'project-12',
-    imagePath: '/images/projects/05069a2c-1d0b-42b3-93cb-e7db863c895b.png',
-    alt: { ja: 'プロジェクト画像 12', en: 'Project Image 12' }
-  },
-  {
     id: 'project-13',
     imagePath: '/images/projects/2c9e460b-47c6-4624-b831-9fafe29d8c46.png',
     alt: { ja: 'プロジェクト画像 13', en: 'Project Image 13' }
@@ -90,5 +65,10 @@ export const projectsData: Project[] = [
     id: 'project-18',
     imagePath: '/images/cover.jpg',
     alt: { ja: 'カバー画像', en: 'Cover Image' }
+  },
+  {
+    id: 'project-19',
+    imagePath: '/images/monography.jpg',
+    alt: { ja: 'モノグラフィー', en: 'Monography' }
   }
 ];
