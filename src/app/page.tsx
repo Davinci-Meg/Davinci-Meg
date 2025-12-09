@@ -3,6 +3,7 @@
 import { LanguageProvider } from '@/hooks/useTranslation';
 import { Navigation } from '@/components/ui/Navigation';
 import { Hero } from '@/components/sections/Hero';
+import { Profile } from '@/components/sections/Profile';
 import { Awards } from '@/components/sections/Awards';
 import { Publications } from '@/components/sections/Publications';
 import { TechnicalSkills } from '@/components/sections/TechnicalSkills';
@@ -18,6 +19,7 @@ export default function Home() {
         <Navigation />
         <main>
           <Hero />
+          <Profile />
           <Awards />
           <Publications />
           <TechnicalSkills />

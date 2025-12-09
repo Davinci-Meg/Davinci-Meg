@@ -16,6 +16,7 @@ export interface ProfileData {
     instagram: string;
     youtube: string;
   };
+  description: Translation;
 }
 
 export interface Award {
