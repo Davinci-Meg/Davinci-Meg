@@ -2,44 +2,43 @@
 
 import { useTranslation } from '@/hooks/useTranslation';
 import { mediaCoverageData } from '@/lib/data/media';
+import { Section } from '@/components/ui/Section';
+import { Card } from '@/components/ui/Card';
+import { ArrowUpRight } from 'lucide-react';
 
 export function MediaCoverage() {
   const { t, currentLanguage } = useTranslation();
 
   return (
-    <section id="media" className="py-24 px-4 bg-gradient-to-br from-indigo-50 to-purple-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            {t('sections.media')}
-          </h2>
-          <div className="section-divider w-24 mx-auto"></div>
-        </div>
-        
-        <div className="space-y-6 stagger-fade">
+    <Section id="media" className="bg-[var(--background)]">
+      <div className="max-w-screen-xl mx-auto px-6 md:px-12">
+        <h2 className="text-section-title mb-12">
+          {t('sections.media')}
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {mediaCoverageData.map((media) => (
-            <div
-              key={media.id}
-              className="bg-white p-8 rounded-xl shadow-lg card-hover"
-            >
-              <p className="text-indigo-600 font-medium mb-3">
-                {media.organization}
-              </p>
-              <h3 className="font-bold text-xl mb-3 text-gray-800">
-                {media.title[currentLanguage]}
-              </h3>
+            <Card key={media.id} className="flex flex-col justify-between h-full group">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-2">
+                  {media.organization}
+                </p>
+                <h3 className="font-bold text-xl mb-4 leading-tight">
+                  {media.title[currentLanguage]}
+                </h3>
+              </div>
               <a
                 href={media.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium transition-colors"
+                className="inline-flex items-center text-sm font-bold uppercase tracking-wider group-hover:text-[var(--accent)] transition-colors"
               >
-                {t('ui.viewArticle')} →
+                {t('ui.viewArticle')} <ArrowUpRight className="ml-1 w-4 h-4" />
               </a>
-            </div>
+            </Card>
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

@@ -2,39 +2,35 @@
 
 import { useTranslation } from '@/hooks/useTranslation';
 import { publicationsData } from '@/lib/data/publications';
+import { Section } from '@/components/ui/Section';
+import { Card } from '@/components/ui/Card';
 
 export function Publications() {
   const { t, currentLanguage } = useTranslation();
 
   return (
-    <section id="publications" className="py-24 px-4 bg-gradient-to-br from-blue-50 to-indigo-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-            {t('sections.publications')}
-          </h2>
-          <div className="section-divider w-24 mx-auto"></div>
-        </div>
-        
-        <div className="space-y-6 stagger-fade">
+    <Section id="publications" className="bg-[var(--background)]">
+      <div className="max-w-screen-xl mx-auto px-6 md:px-12">
+        <h2 className="text-section-title mb-12">
+          {t('sections.publications')}
+        </h2>
+
+        <div className="grid gap-6">
           {publicationsData.map((publication) => (
-            <div
-              key={publication.id}
-              className="bg-white p-8 rounded-xl shadow-lg card-hover"
-            >
-              <p className="text-blue-600 font-medium mb-3">
+            <Card key={publication.id} className="group hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
+              <p className="text-sm font-mono text-gray-500 mb-2">
                 {publication.authors[currentLanguage]}
               </p>
-              <h3 className="font-bold text-xl mb-3 text-gray-800">
+              <h3 className="font-bold text-xl md:text-2xl mb-3 leading-tight group-hover:text-[var(--accent)] transition-colors">
                 &ldquo;{publication.title[currentLanguage]}&rdquo;
               </h3>
-              <p className="text-gray-600 text-lg">
+              <p className="text-lg font-medium">
                 {publication.venue[currentLanguage]}
               </p>
-            </div>
+            </Card>
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

@@ -2,44 +2,43 @@
 
 import { useTranslation } from '@/hooks/useTranslation';
 import { activitiesData } from '@/lib/data/activities';
+import { Section } from '@/components/ui/Section';
+import { Card } from '@/components/ui/Card';
+import { ArrowUpRight } from 'lucide-react';
 
 export function Activities() {
   const { t, currentLanguage } = useTranslation();
 
   return (
-    <section id="activities" className="py-24 px-4 bg-gradient-to-br from-gray-50 to-green-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-green-600 bg-clip-text text-transparent">
-            {t('sections.activities')}
-          </h2>
-          <div className="section-divider w-24 mx-auto"></div>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-6 stagger-fade">
+    <Section id="activities" className="bg-[var(--background)]">
+      <div className="max-w-screen-xl mx-auto px-6 md:px-12">
+        <h2 className="text-section-title mb-12">
+          {t('sections.activities')}
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {activitiesData.map((activity) => (
-            <div
-              key={activity.id}
-              className="bg-white p-8 rounded-xl shadow-lg card-hover"
-            >
-              <h3 className="font-bold text-lg mb-3 text-gray-800">
-                {activity.title[currentLanguage]}
-              </h3>
-              <p className="text-green-600 font-semibold mb-4">
-                {activity.role[currentLanguage]}
-              </p>
+            <Card key={activity.id} className="flex flex-col justify-between h-full group">
+              <div>
+                <h3 className="font-bold text-xl mb-2 leading-tight">
+                  {activity.title[currentLanguage]}
+                </h3>
+                <p className="text-[var(--accent)] font-medium mb-4">
+                  {activity.role[currentLanguage]}
+                </p>
+              </div>
               <a
                 href={activity.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-green-600 hover:text-green-800 font-medium transition-colors"
+                className="inline-flex items-center text-sm font-bold uppercase tracking-wider mt-4 group-hover:text-[var(--accent)] transition-colors"
               >
-                {t('ui.viewDetails')} →
+                {t('ui.viewDetails')} <ArrowUpRight className="ml-1 w-4 h-4" />
               </a>
-            </div>
+            </Card>
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

@@ -3,6 +3,9 @@
 import { useTranslation } from '@/hooks/useTranslation';
 import { awardsData } from '@/lib/data/awards';
 import { groupByYear } from '@/lib/utils';
+import { Section } from '@/components/ui/Section';
+import { Card } from '@/components/ui/Card';
+import { ArrowUpRight } from 'lucide-react';
 
 export function Awards() {
   const { t, currentLanguage } = useTranslation();
@@ -10,48 +13,44 @@ export function Awards() {
   const years = Object.keys(groupedAwards).map(Number).sort((a, b) => b - a);
 
   return (
-    <section id="awards" className="py-24 px-4 bg-gradient-to-br from-gray-50 to-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-blue-600 bg-clip-text text-transparent">
-            {t('sections.awards')}
-          </h2>
-          <div className="section-divider w-24 mx-auto"></div>
-        </div>
-        
-        <div className="space-y-12">
+    <Section id="awards" className="bg-[var(--background)]">
+      <div className="max-w-screen-xl mx-auto px-6 md:px-12">
+        <h2 className="text-section-title mb-12">
+          {t('sections.awards')}
+        </h2>
+
+        <div className="space-y-16">
           {years.map((year) => (
             <div key={year}>
-              <h3 className="text-2xl font-bold mb-6 text-blue-600">
-                {t(`years.${year}`)}
+              <h3 className="text-6xl font-bold mb-8 text-gray-200 dark:text-gray-800">
+                {year}
               </h3>
-              <div className="space-y-4 stagger-fade">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {groupedAwards[year].map((award) => (
-                  <div
-                    key={award.id}
-                    className="bg-white p-8 rounded-xl shadow-lg card-hover"
-                  >
-                    <h4 className="font-bold text-xl mb-3 text-gray-800">
-                      {award.title[currentLanguage]}
-                    </h4>
-                    <p className="text-blue-600 font-semibold mb-4 text-lg">
-                      {award.prize[currentLanguage]}
-                    </p>
+                  <Card key={award.id} className="flex flex-col justify-between h-full group">
+                    <div>
+                      <h4 className="font-bold text-xl mb-2 leading-tight">
+                        {award.title[currentLanguage]}
+                      </h4>
+                      <p className="text-[var(--accent)] font-medium mb-4">
+                        {award.prize[currentLanguage]}
+                      </p>
+                    </div>
                     <a
                       href={award.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
+                      className="inline-flex items-center text-sm font-bold uppercase tracking-wider mt-4 group-hover:text-[var(--accent)] transition-colors"
                     >
-                      {t('ui.viewDetails')} →
+                      {t('ui.viewDetails')} <ArrowUpRight className="ml-1 w-4 h-4" />
                     </a>
-                  </div>
+                  </Card>
                 ))}
               </div>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

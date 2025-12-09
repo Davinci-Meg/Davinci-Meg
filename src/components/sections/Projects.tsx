@@ -5,42 +5,38 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { projectsData } from '@/lib/data/projects';
 import { getImagePath } from '@/lib/utils';
 import { getBlurDataURL } from '@/lib/imageBlur';
+import { Section } from '@/components/ui/Section';
+import { Card } from '@/components/ui/Card';
 
 export function Projects() {
   const { t, currentLanguage } = useTranslation();
 
   return (
-    <section id="projects" className="py-24 px-4 bg-gradient-to-br from-purple-50 to-pink-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            {t('sections.projects')}
-          </h2>
-          <div className="section-divider w-24 mx-auto"></div>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <Section id="projects" className="bg-[var(--background)]">
+      <div className="max-w-screen-xl mx-auto px-6 md:px-12">
+        <h2 className="text-section-title mb-12">
+          {t('sections.projects')}
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsData.map((project, index) => (
-            <div
-              key={project.id}
-              className="relative aspect-square group overflow-hidden rounded-xl bg-gray-100 shadow-lg"
-            >
+            <Card key={project.id} className="overflow-hidden p-0 border-0 bg-gray-100 dark:bg-gray-900 aspect-square relative group">
               <Image
                 src={getImagePath(project.imagePath)}
                 alt={project.alt[currentLanguage]}
-                width={400}
-                height={400}
-                className="w-full h-full object-cover project-image"
-                loading={index < 8 ? "eager" : "lazy"}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                loading={index < 6 ? "eager" : "lazy"}
                 placeholder="blur"
                 blurDataURL={getBlurDataURL(project.imagePath)}
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                quality={75}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                quality={85}
               />
-            </div>
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+            </Card>
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
