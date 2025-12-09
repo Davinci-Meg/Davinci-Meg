@@ -16,7 +16,7 @@ export function Activities() {
           {t('sections.activities')}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6">
           {activitiesData.map((activity) => (
             <Card key={activity.id} className="flex flex-col justify-between h-full group">
               <div>

@@ -25,7 +25,7 @@ export function Awards() {
               <h3 className="text-6xl font-bold mb-8 text-gray-200 dark:text-gray-800">
                 {year}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6">
                 {groupedAwards[year].map((award) => (
                   <Card key={award.id} className="flex flex-col justify-between h-full group">
                     <div>

@@ -16,7 +16,7 @@ export function MediaCoverage() {
           {t('sections.media')}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6">
           {mediaCoverageData.map((media) => (
             <Card key={media.id} className="flex flex-col justify-between h-full group">
               <div>
