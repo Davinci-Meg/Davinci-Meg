@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslation } from '@/hooks/useTranslation';
 import { profileData } from '@/lib/data/profile';
+import { getImagePath } from '@/lib/utils';
 import { Section } from '@/components/ui/Section';
 import { ArrowDown } from 'lucide-react';
 
@@ -39,7 +40,7 @@ export function Hero() {
                             }`}
                     >
                         <Image
-                            src={src}
+                            src={getImagePath(src)}
                             alt="Hero Background"
                             fill
                             className="object-cover"
