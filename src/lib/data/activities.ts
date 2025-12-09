@@ -64,13 +64,49 @@ export const activitiesData: Activity[] = [
   {
     id: 'activity-6',
     title: {
-      ja: 'デジタル学園祭2025＠EXPO 2025 大阪・関西万博 出展',
+      ja: 'デジタル学園祭2025＠EXPO 2025 大阪・関西万博',
       en: 'Digital Cultural Festival 2025 @ EXPO 2025 Osaka-Kansai World Expo Exhibition'
     },
     role: {
-      ja: '関西テック・クリエイター・チャレンジブース',
-      en: 'Kansai Tech Creator Challenge Booth'
+      ja: '出展',
+      en: 'Exhibitor'
     },
     url: 'https://edu.watch.impress.co.jp/docs/news/2027040.html'
+  },
+  {
+    id: 'activity-7',
+    title: {
+      ja: 'NoMaps2025 特別展示 「まだ名前のない世界」',
+      en: 'NoMaps2025 Special Exhibition "まだ名前のない世界"'
+    },
+    role: {
+      ja: '企画・制作・出展',
+      en: 'Planning, Development, Exhibition'
+    },
+    url: 'https://no-maps.jp/program/program-channel-scarts-2f-mall-c/special_exhibition/'
+  },
+  {
+    id: 'activity-8',
+    title: {
+      ja: 'InterBEE 2025 エンターテインメント/ライティング部門',
+      en: 'InterBEE 2025 Entertainment/Writing Department'
+    },
+    role: {
+      ja: '出展',
+      en: 'Exhibitor'
+    },
+    url: 'https://www.inter-bee.com/ja/forvisitors/exhibitor_info/detail/detail.html?id=2664'
+  },
+  {
+    id: 'activity-9',
+    title: {
+      ja: 'Mono - AI x 身体表現による感動の拡張',
+      en: 'Mono - AI x Body Expression Expansion'
+    },
+    role: {
+      ja: '制作協力',
+      en: 'Cooperation'
+    },
+    url: 'https://prtimes.jp/main/html/rd/p/000000090.000037875.html'
   }
 ];

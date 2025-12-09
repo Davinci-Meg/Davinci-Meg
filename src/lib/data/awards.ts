@@ -80,6 +80,19 @@ export const awardsData: Award[] = [
     url: 'https://hsfc.jp/events/119',
     year: 2025
   },
+  {
+    id: 'award-2025-7',
+    title: {
+      ja: '技育展2025 決勝大会進出',
+      en: '技育展2025 Final Round'
+    },
+    prize: {
+      ja: '',
+      en: ''
+    },
+    url: 'https://www.youtube.com/watch?v=5c404zSs2Go',
+    year: 2025
+  },
   // 2024年
   {
     id: 'award-2024-1',
