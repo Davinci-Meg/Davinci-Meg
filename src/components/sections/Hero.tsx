@@ -10,11 +10,14 @@ export function Hero() {
   const interestTags = ['Human Computer Interaction', 'Robotics', 'Umwelt'];
 
   return (
-    <Section className="min-h-[80vh] flex flex-col justify-between px-6 md:px-12 pt-32 pb-12">
+    <Section className="min-h-screen flex flex-col justify-between px-6 md:px-12 pt-32 pb-12">
       <div className="max-w-screen-xl">
         <h1 className="text-huge tracking-tighter mb-6">
           {profileData.name[currentLanguage]}
         </h1>
+        <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light">
+          {profileData.affiliation[currentLanguage]}
+        </p>
         <div className="flex flex-wrap gap-3">
           {interestTags.map((tag, index) => (
             <span

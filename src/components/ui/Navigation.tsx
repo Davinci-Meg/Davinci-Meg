@@ -31,10 +31,10 @@ export function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="w-full px-6 md:px-12">
         <div className="flex justify-between items-center h-16">
-          <a 
-            href="#" 
+          <a
+            href="#"
             className="font-bold text-xl text-gray-900"
             onClick={(e) => {
               e.preventDefault();
@@ -43,45 +43,49 @@ export function Navigation() {
           >
             Portfolio
           </a>
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navigationItems.map((item) => (
-              <a
-                key={item.key}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleScroll(item.href);
-                }}
-                className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
-              >
-                {item.label}
-              </a>
-            ))}
-            
-            <LanguageToggle />
-          </div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={toggleMobileMenu}
-            className="md:hidden flex items-center justify-center p-2"
-            aria-label="メニューを開く"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-              />
-            </svg>
-          </button>
+          <div className="flex items-center gap-4">
+            {/* Desktop Navigation */}
+            <div className="hidden xl:flex items-center space-x-8">
+              {navigationItems.map((item) => (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleScroll(item.href);
+                  }}
+                  className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+
+            <div className="hidden md:block">
+              <LanguageToggle />
+            </div>
+
+            {/* Mobile/Tablet menu button */}
+            <button
+              onClick={toggleMobileMenu}
+              className="xl:hidden flex items-center justify-center p-2"
+              aria-label="メニューを開く"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`md:hidden pb-4 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+        <div className={`xl:hidden pb-4 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
           {navigationItems.map((item) => (
             <a
               key={item.key}
@@ -95,8 +99,8 @@ export function Navigation() {
               {item.label}
             </a>
           ))}
-          
-          <div className="flex items-center space-x-2 pt-4 border-t border-gray-200 mt-4">
+
+          <div className="md:hidden flex items-center space-x-2 pt-4 border-t border-gray-200 mt-4">
             <span className="text-sm text-gray-600">Language:</span>
             <LanguageToggle />
           </div>
