@@ -63,12 +63,12 @@ export const projectsData: Project[] = [
   },
   {
     id: 'project-18',
-    imagePath: '/images/cover.jpg',
-    alt: { ja: 'カバー画像', en: 'Cover Image' }
+    imagePath: '/images/projects/project-18.png',
+    alt: { ja: 'プロジェクト画像 18', en: 'Project Image 18' }
   },
   {
     id: 'project-19',
-    imagePath: '/images/monography.jpg',
-    alt: { ja: 'モノグラフィー', en: 'Monography' }
+    imagePath: '/images/projects/project-19.png',
+    alt: { ja: 'プロジェクト画像 19', en: 'Project Image 19' }
   }
 ];
