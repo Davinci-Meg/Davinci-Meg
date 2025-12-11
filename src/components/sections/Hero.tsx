@@ -9,11 +9,11 @@ import { Section } from '@/components/ui/Section';
 import { ArrowDown } from 'lucide-react';
 
 const HERO_IMAGES = [
-    '/images/hero/hero-slide-1.jpg',
-    '/images/hero/hero-slide-2.jpg',
-    '/images/hero/hero-slide-3.jpg',
-    '/images/hero/hero-slide-4.png',
-    '/images/hero/hero-slide-5.png'
+    '/images/hero/hero-slide-1.webp',
+    '/images/hero/hero-slide-2.webp',
+    '/images/hero/hero-slide-3.webp',
+    '/images/hero/hero-slide-4.webp',
+    '/images/hero/hero-slide-5.webp'
 ];
 
 export function Hero() {

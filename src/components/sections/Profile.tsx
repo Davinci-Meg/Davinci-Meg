@@ -29,7 +29,7 @@ export function Profile() {
                     <div className="flex-1 flex justify-center md:justify-end w-full md:w-auto">
                         <div className="relative w-full max-w-sm md:max-w-md aspect-[4/3] overflow-hidden rounded-2xl shadow-xl">
                             <Image
-                                src={getImagePath('/images/profile/profile-rectangle-v2.png')}
+                                src={getImagePath('/images/profile/profile-rectangle-v2.webp')}
                                 alt="Profile"
                                 fill
                                 className="object-cover"

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Megumu Isshiki Portfolio",
     images: [
       {
-        url: "/images/profile/profile-rectangle-v2.png",
+        url: "/images/profile/profile-rectangle-v2.webp",
         width: 1200, // Approximate/target width, good standard for OG
         height: 900, // 4:3 aspect
         alt: "Megumu Isshiki Profile Picture"
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Megumu Isshiki - Portfolio",
     description: "Portfolio of Megumu Isshiki (一色潤), a researcher in Human Computer Interaction, Robotics, and Umwelt.",
-    images: ["/images/profile/profile-rectangle-v2.png"]
+    images: ["/images/profile/profile-rectangle-v2.webp"]
   },
   robots: {
     index: true,
