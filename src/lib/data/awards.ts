@@ -1,6 +1,20 @@
 import { Award } from '@/types';
 
 export const awardsData: Award[] = [
+  // 2026年
+  {
+    id: 'award-2026-1',
+    title: {
+      ja: '北大テックガレージ Spring Founders Program 09',
+      en: 'Hokkaido University Tech Garage Spring Founders Program 09'
+    },
+    prize: {
+      ja: '採択',
+      en: 'Selected'
+    },
+    url: 'https://hokudai-hutg.com/program/2026-02-spring-founders-program-09/',
+    year: 2026
+  },
   // 2025年
   {
     id: 'award-2025-1',
