@@ -30,7 +30,7 @@ export function Hero() {
     }, []);
 
     return (
-        <Section className="min-h-screen relative flex flex-col items-center justify-center px-4 md:px-12 pt-24 md:pt-32 pb-12 overflow-hidden text-center">
+        <Section className="min-h-screen relative flex flex-col items-center justify-center px-4 md:px-12 pt-24 md:pt-32 pb-[8.75rem] overflow-hidden text-center">
             {/* Background Slideshow */}
             <div className="absolute inset-0 z-0 bg-black">
                 {HERO_IMAGES.map((src, index) => (
@@ -56,17 +56,6 @@ export function Hero() {
                 <h1 className="text-huge tracking-tighter mb-6 text-white break-words w-full px-2">
                     {profileData.name[currentLanguage]}
                 </h1>
-                <p className="text-xl md:text-2xl text-gray-200 mb-8 font-light max-w-2xl px-4">
-                    {currentLanguage === 'ja' ? (
-                        <>
-                            <span className="block md:inline">北海道大学 工学部 </span>
-                            <span className="block md:inline">情報エレクトロニクス学科 </span>
-                            <span className="block md:inline">情報理工学コース</span>
-                        </>
-                    ) : (
-                        profileData.affiliation[currentLanguage]
-                    )}
-                </p>
                 <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-12 px-2">
                     {interestTags.map((tag, index) => (
                         <span
@@ -79,14 +68,14 @@ export function Hero() {
                 </div>
 
                 <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-sm font-bold tracking-widest uppercase text-white px-4">
-                    <a href={profileData.socialLinks.github} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] transition-colors">GitHub</a>
-                    <a href={profileData.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] transition-colors">Facebook</a>
-                    <a href={profileData.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] transition-colors">Instagram</a>
-                    <a href={profileData.socialLinks.youtube} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] transition-colors">YouTube</a>
+                    <a href={profileData.socialLinks.github} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[var(--accent)] transition-colors">GitHub</a>
+                    <a href={profileData.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[var(--accent)] transition-colors">Facebook</a>
+                    <a href={profileData.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[var(--accent)] transition-colors">Instagram</a>
+                    <a href={profileData.socialLinks.youtube} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[var(--accent)] transition-colors">YouTube</a>
                 </div>
             </div>
 
-            <div className="absolute bottom-8 md:bottom-12 z-10 animate-bounce">
+            <div className="absolute bottom-8 md:bottom-12 z-10 animate-[bounce_1s_ease-in-out_3]">
                 <ArrowDown className="w-6 h-6 md:w-8 md:h-8 text-[var(--accent)]" />
             </div>
         </Section>

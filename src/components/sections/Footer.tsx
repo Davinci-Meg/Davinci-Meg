@@ -14,10 +14,10 @@ export function Footer() {
             Megumu Isshiki
           </h2>
           <div className="flex flex-col gap-2 text-lg font-medium text-gray-500">
-            <a href={profileData.socialLinks.github} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] transition-colors">GitHub</a>
-            <a href={profileData.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] transition-colors">Facebook</a>
-            <a href={profileData.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] transition-colors">Instagram</a>
-            <a href={profileData.socialLinks.youtube} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] transition-colors">YouTube</a>
+            <a href={profileData.socialLinks.github} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[var(--accent)] transition-colors">GitHub</a>
+            <a href={profileData.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[var(--accent)] transition-colors">Facebook</a>
+            <a href={profileData.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[var(--accent)] transition-colors">Instagram</a>
+            <a href={profileData.socialLinks.youtube} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[var(--accent)] transition-colors">YouTube</a>
           </div>
         </div>
 

@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { LanguageToggle } from './LanguageToggle';
 
 export function Navigation() {
   const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('');
 
   const navigationItems = [
     { key: 'awards', href: '#awards', label: t('navigation.awards') },
@@ -16,6 +17,27 @@ export function Navigation() {
     { key: 'activities', href: '#activities', label: t('navigation.activities') },
     { key: 'projects', href: '#projects', label: t('navigation.projects') }
   ];
+
+  useEffect(() => {
+    const sectionIds = ['awards', 'publications', 'skills', 'media', 'activities', 'projects'];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        }
+      },
+      { threshold: 0.3, rootMargin: '-20% 0px -60% 0px' }
+    );
+
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleScroll = (href: string) => {
     const element = document.querySelector(href);
@@ -30,12 +52,12 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+    <nav className="fixed top-4 left-4 right-4 bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--card-border)] rounded-2xl z-50">
       <div className="w-full px-6 md:px-12">
         <div className="flex justify-between items-center h-16">
           <a
             href="#"
-            className="font-bold text-xl text-gray-900"
+            className="font-bold text-xl text-[var(--foreground)]"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -55,7 +77,11 @@ export function Navigation() {
                     e.preventDefault();
                     handleScroll(item.href);
                   }}
-                  className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                  className={`transition-colors cursor-pointer ${
+                    activeSection === item.key
+                      ? 'text-[var(--accent)] font-medium'
+                      : 'text-[var(--foreground)]/60 hover:text-[var(--foreground)] '
+                  }`}
                 >
                   {item.label}
                 </a>
@@ -94,14 +120,18 @@ export function Navigation() {
                 e.preventDefault();
                 handleScroll(item.href);
               }}
-              className="block py-2 text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+              className={`block py-2 transition-colors cursor-pointer ${
+                activeSection === item.key
+                  ? 'text-[var(--accent)] font-medium'
+                  : 'text-[var(--foreground)]/60 hover:text-[var(--foreground)]'
+              }`}
             >
               {item.label}
             </a>
           ))}
 
-          <div className="md:hidden flex items-center space-x-2 pt-4 border-t border-gray-200 mt-4">
-            <span className="text-sm text-gray-600">Language:</span>
+          <div className="md:hidden flex items-center space-x-2 pt-4 border-t border-[var(--card-border)] mt-4">
+            <span className="text-sm text-[var(--foreground)]/60">Language:</span>
             <LanguageToggle />
           </div>
         </div>

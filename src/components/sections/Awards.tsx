@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslation } from '@/hooks/useTranslation';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { awardsData } from '@/lib/data/awards';
 import { groupByYear } from '@/lib/utils';
 import { Section } from '@/components/ui/Section';
@@ -9,12 +10,13 @@ import { ArrowUpRight } from 'lucide-react';
 
 export function Awards() {
   const { t, currentLanguage } = useTranslation();
+  const revealRef = useScrollReveal();
   const groupedAwards = groupByYear(awardsData);
   const years = Object.keys(groupedAwards).map(Number).sort((a, b) => b - a);
 
   return (
-    <Section id="awards" className="bg-[var(--background)]">
-      <div className="max-w-screen-xl mx-auto px-6 md:px-12">
+    <Section id="awards" className="bg-[var(--card-bg)]">
+      <div ref={revealRef} className="max-w-screen-xl mx-auto px-6 md:px-12 scroll-reveal">
         <h2 className="text-section-title mb-12">
           {t('sections.awards')}
         </h2>
@@ -40,7 +42,7 @@ export function Awards() {
                       href={award.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm font-bold uppercase tracking-wider mt-4 group-hover:text-[var(--accent)] transition-colors"
+                      className="cursor-pointer inline-flex items-center text-sm font-bold uppercase tracking-wider mt-4 group-hover:text-[var(--accent)] transition-colors"
                     >
                       {t('ui.viewDetails')} <ArrowUpRight className="ml-1 w-4 h-4" />
                     </a>
