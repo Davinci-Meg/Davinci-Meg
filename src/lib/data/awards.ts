@@ -15,6 +15,19 @@ export const awardsData: Award[] = [
     url: 'https://hokudai-hutg.com/program/2026-02-spring-founders-program-09/',
     year: 2026
   },
+  {
+    id: 'award-2026-2',
+    title: {
+      ja: '第6回 札幌学院大学 学生ビジネスプランコンテスト',
+      en: 'The 6th Sapporo Gakuin University Student Business Plan Contest'
+    },
+    prize: {
+      ja: '最優秀賞',
+      en: 'Grand Prize'
+    },
+    url: 'https://www.sgu.ac.jp/renkei_c/06_business.html',
+    year: 2026
+  },
   // 2025年
   {
     id: 'award-2025-1',
