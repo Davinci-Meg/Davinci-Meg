@@ -13,7 +13,7 @@ export const translations: TranslationKeys = {
     fieldOfInterest: { ja: 'Field of interest:', en: 'Field of interest:' }
   },
   sections: {
-    awards: { ja: 'Awards & Honors', en: 'Awards & Honors' },
+    awards: { ja: 'Selected Awards & Honors', en: 'Selected Awards & Honors' },
     publications: { ja: 'Publication', en: 'Publication' },
     skills: { ja: 'Technical Skills', en: 'Technical Skills' },
     media: { ja: 'Media Coverage', en: 'Media Coverage' },
