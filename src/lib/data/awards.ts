@@ -13,7 +13,8 @@ export const awardsData: Award[] = [
       en: 'Selected'
     },
     url: 'https://hokudai-hutg.com/program/2026-02-spring-founders-program-09/',
-    year: 2026
+    year: 2026,
+    selected: true
   },
   {
     id: 'award-2026-2',
@@ -66,7 +67,8 @@ export const awardsData: Award[] = [
       en: 'Best Award'
     },
     url: 'https://x.com/Davinci_kcct/status/1913796393355059583',
-    year: 2025
+    year: 2025,
+    selected: true
   },
   {
     id: 'award-2025-4',
@@ -98,7 +100,7 @@ export const awardsData: Award[] = [
     id: 'award-2025-6',
     title: {
       ja: '北海道医療AIビジネスプランコンテスト2025',
-      en: "Hokkaido Medical AI Business Plan Contest 20250"
+      en: "Hokkaido Medical AI Business Plan Contest 2025"
     },
     prize: {
       ja: 'Bio Engineering Capital賞（第一位）',
@@ -145,7 +147,8 @@ export const awardsData: Award[] = [
       en: '5th generation'
     },
     url: 'https://www.nii.ac.jp/tatsujin/en/',
-    year: 2024
+    year: 2024,
+    selected: true
   },
   {
     id: 'award-2024-3',
@@ -171,7 +174,8 @@ export const awardsData: Award[] = [
       en: 'SOLIDWORKS prize'
     },
     url: 'https://youtu.be/M5Tu90vtmLs?si=zgNnyMZ5u8CpYRZi',
-    year: 2024
+    year: 2024,
+    selected: true
   },
   {
     id: 'award-2024-5',
@@ -210,7 +214,8 @@ export const awardsData: Award[] = [
       en: 'Selected Initiative: "Kansai Tech Creator Challenge - CA Course" Selection (Selected funding amount: 550,000 yen)'
     },
     url: 'https://kansai-tcc.dle.or.jp/ca2024/',
-    year: 2024
+    year: 2024,
+    selected: true
   },
   {
     id: 'award-2024-8',
@@ -223,7 +228,8 @@ export const awardsData: Award[] = [
       en: 'Student Award'
     },
     url: 'https://x.com/GugenTheIdea/status/1867847196626014530',
-    year: 2024
+    year: 2024,
+    selected: true
   },
   // 2023年
   {
@@ -250,7 +256,8 @@ export const awardsData: Award[] = [
       en: 'Excellence Award'
     },
     url: 'https://デザコン.com/docs.php?n=bumon4_kekka.pdf',
-    year: 2023
+    year: 2023,
+    selected: true
   },
   {
     id: 'award-2023-3',

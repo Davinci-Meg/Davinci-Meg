@@ -25,6 +25,7 @@ export interface Award {
   prize: Translation;
   url: string;
   year: number;
+  selected?: boolean;
 }
 
 export interface Publication {
@@ -51,6 +52,7 @@ export interface Activity {
   title: Translation;
   role: Translation;
   url: string;
+  selected?: boolean;
 }
 
 export interface Project {
@@ -87,6 +89,7 @@ export interface TranslationKeys {
   ui: {
     viewDetails: Translation;
     viewArticle: Translation;
+    viewAll: Translation;
     speaker: Translation;
     asTeam: Translation;
   };

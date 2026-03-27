@@ -15,22 +15,22 @@ export function groupByYear<T extends { year: number }>(items: T[]): Record<numb
   }, {} as Record<number, T[]>);
 }
 
-// GitHub Pages用の画像パスヘルパー  
+// GitHub Pages用の画像パスヘルパー
 // Next.jsのbasePathと同じ値を使用
 const BASE_PATH = '/Davinci-Meg';
+const isProd = process.env.NODE_ENV === 'production';
 
 export function getImagePath(path: string): string {
-  // GitHub Pages環境かローカル環境かを判定
-  // ビルド時は常にGitHub Pages用のパスを生成
-  const needsBasePath = true; // GitHub Pages用に常にbasePathを追加
-  
-  if (needsBasePath && !path.startsWith(BASE_PATH)) {
-    // スラッシュの重複を避ける
+  if (!isProd) {
+    return path;
+  }
+
+  if (!path.startsWith(BASE_PATH)) {
     if (path.startsWith('/')) {
       return `${BASE_PATH}${path}`;
     }
     return `${BASE_PATH}/${path}`;
   }
-  
+
   return path;
 }

@@ -1,7 +1,6 @@
 'use client';
 
 import { useTranslation } from '@/hooks/useTranslation';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { mediaCoverageData } from '@/lib/data/media';
 import { Section } from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
@@ -9,11 +8,10 @@ import { ArrowUpRight } from 'lucide-react';
 
 export function MediaCoverage() {
   const { t, currentLanguage } = useTranslation();
-  const revealRef = useScrollReveal();
 
   return (
     <Section id="media" className="bg-[var(--background)]">
-      <div ref={revealRef} className="max-w-screen-xl mx-auto px-6 md:px-12 scroll-reveal">
+      <div className="max-w-screen-xl mx-auto px-6 md:px-12">
         <h2 className="text-section-title mb-12">
           {t('sections.media')}
         </h2>

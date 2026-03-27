@@ -46,3 +46,12 @@ CLAUDE.md
 dev_diary/
 .claude/
 .claude_workflow/
+
+# CV (LaTeX source managed separately)
+cv/
+
+# Playwright MCP
+.playwright-mcp/
+
+# Screenshots
+screenshot-*.png

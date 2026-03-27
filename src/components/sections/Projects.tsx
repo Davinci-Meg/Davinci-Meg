@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { useTranslation } from '@/hooks/useTranslation';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { projectsData } from '@/lib/data/projects';
 import { getImagePath } from '@/lib/utils';
 import { getBlurDataURL } from '@/lib/imageBlur';
@@ -11,11 +10,10 @@ import { Card } from '@/components/ui/Card';
 
 export function Projects() {
   const { t, currentLanguage } = useTranslation();
-  const revealRef = useScrollReveal();
 
   return (
     <Section id="projects" className="bg-[var(--background)]">
-      <div ref={revealRef} className="max-w-screen-xl mx-auto px-6 md:px-12 scroll-reveal">
+      <div className="max-w-screen-xl mx-auto px-6 md:px-12">
         <h2 className="text-section-title mb-12">
           {t('sections.projects')}
         </h2>

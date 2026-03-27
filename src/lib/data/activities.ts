@@ -71,7 +71,8 @@ export const activitiesData: Activity[] = [
       ja: '出展',
       en: 'Exhibitor'
     },
-    url: 'https://edu.watch.impress.co.jp/docs/news/2027040.html'
+    url: 'https://edu.watch.impress.co.jp/docs/news/2027040.html',
+    selected: true
   },
   {
     id: 'activity-7',
@@ -83,7 +84,8 @@ export const activitiesData: Activity[] = [
       ja: '企画・制作・出展',
       en: 'Planning, Development, Exhibition'
     },
-    url: 'https://no-maps.jp/program/program-channel-scarts-2f-mall-c/special_exhibition/'
+    url: 'https://no-maps.jp/program/program-channel-scarts-2f-mall-c/special_exhibition/',
+    selected: true
   },
   {
     id: 'activity-8',
@@ -95,7 +97,8 @@ export const activitiesData: Activity[] = [
       ja: '出展',
       en: 'Exhibitor'
     },
-    url: 'https://www.inter-bee.com/ja/forvisitors/exhibitor_info/detail/detail.html?id=2664'
+    url: 'https://www.inter-bee.com/ja/forvisitors/exhibitor_info/detail/detail.html?id=2664',
+    selected: true
   },
   {
     id: 'activity-9',

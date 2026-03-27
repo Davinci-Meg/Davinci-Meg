@@ -28,6 +28,7 @@ export const translations: TranslationKeys = {
   ui: {
     viewDetails: { ja: '詳細を見る', en: 'View Details' },
     viewArticle: { ja: '記事を見る', en: 'View Article' },
+    viewAll: { ja: 'すべて見る', en: 'View All' },
     speaker: { ja: '登壇', en: 'Speaker' },
     asTeam: { ja: 'チーム', en: 'Team' }
   },
