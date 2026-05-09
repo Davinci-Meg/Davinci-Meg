@@ -24,7 +24,7 @@ export const profileData: ProfileData = {
     youtube: 'https://youtube.com/@davinci_meg?si=iP2BZzgEu1kXAaiZ'
   },
   description: {
-    ja: '北海道大学 工学部 情報エレクトロニクス学科（B3）。国立情報学研究所 情報科学の達人5期生。経産省AKATSUKIプロジェクト「関西テック・クリエイター・チャレンジ」Cybernetic Avatarコース採択（2024年度）。神戸高専 機械工学科を卒業後、同大学に3年次編入。現在は、ヒューマンコンピュータインタラクション、ロボティクス分野を軸に活動中。',
-    en: 'B3, Division of Computer Science and Information Technology, Hokkaido University. 5th batch of "Information Science Experts" at National Institute of Informatics. Selected for the Cybernetic Avatar Course in the METI AKATSUKI Project "Kansai Tech Creator Challenge" (2024). Transferred to Hokkaido University in the 3rd year after graduating from the Department of Mechanical Engineering at Kobe City College of Technology. Currently focusing on Human Computer Interaction and Robotics.'
+    ja: '北海道大学 工学部 情報エレクトロニクス学科（B4）。ヒューマンコンピュータインタラクション研究室 所属。国立情報学研究所 情報科学の達人5期生。経産省AKATSUKIプロジェクト「関西テック・クリエイター・チャレンジ」Cybernetic Avatarコース採択（2024年度）。神戸高専 機械工学科を卒業後、同大学に3年次編入。現在は、ヒューマンコンピュータインタラクション、ロボティクス分野を軸に活動中。',
+    en: 'B4, Division of Computer Science and Information Technology, Hokkaido University. Member of the Human Computer Interaction Lab. 5th batch of "Information Science Experts" at National Institute of Informatics. Selected for the Cybernetic Avatar Course in the METI AKATSUKI Project "Kansai Tech Creator Challenge" (2024). Transferred to Hokkaido University in the 4th year after graduating from the Department of Mechanical Engineering at Kobe City College of Technology. Currently focusing on Human Computer Interaction and Robotics.'
   }
 };
