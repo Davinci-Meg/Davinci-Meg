@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useTranslation } from '@/hooks/useTranslation';
 import { profileData } from '@/lib/data/profile';
 import { getImagePath } from '@/lib/utils';
-import { Section } from '@/components/ui/Section';
 import { ArrowDown } from 'lucide-react';
 
 const HERO_IMAGES = [
@@ -30,13 +29,13 @@ export function Hero() {
     }, []);
 
     return (
-        <Section className="min-h-screen relative flex flex-col items-center justify-center px-4 md:px-12 pt-24 md:pt-32 pb-[8.75rem] overflow-hidden text-center">
+        <section className="min-h-screen relative flex flex-col px-6 md:px-12 pt-20 md:pt-24 pb-16 md:pb-20 overflow-hidden">
             {/* Background Slideshow */}
             <div className="absolute inset-0 z-0 bg-black">
                 {HERO_IMAGES.map((src, index) => (
                     <div
                         key={src}
-                        className={`absolute inset-0 transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                        className={`absolute inset-0 transition-opacity duration-[1500ms] ease-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                             }`}
                     >
                         <Image
@@ -46,38 +45,40 @@ export function Hero() {
                             className="object-cover"
                             priority={index === 0}
                         />
-                        {/* Overlay for text readability */}
-                        <div className="absolute inset-0 bg-black/60" />
+                        <div className="absolute inset-0 bg-black/45" />
                     </div>
                 ))}
             </div>
 
-            <div className="relative z-10 max-w-screen-xl flex flex-col items-center w-full">
-                <h1 className="text-huge tracking-tighter mb-6 text-white break-words w-full px-2">
+            {/* Top eyebrow */}
+            <div className="relative z-10 flex justify-between items-start text-white/80 text-xs tracking-[0.18em] uppercase">
+                <span>Portfolio — 2026</span>
+                <span className="hidden md:inline">Hokkaido, JP</span>
+            </div>
+
+            {/* Title block */}
+            <div className="relative z-10 flex-1 flex flex-col justify-center max-w-screen-2xl w-full">
+                <h1 className="text-huge text-white break-words mb-8 md:mb-10">
                     {profileData.name[currentLanguage]}
                 </h1>
-                <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-12 px-2">
-                    {interestTags.map((tag, index) => (
-                        <span
-                            key={index}
-                            className="text-base md:text-xl lg:text-3xl font-light text-gray-200 border border-gray-400 rounded-full px-4 md:px-6 py-2 bg-white/10 backdrop-blur-sm"
-                        >
-                            {tag}
-                        </span>
-                    ))}
-                </div>
+                <p className="text-base md:text-xl lg:text-2xl text-white/90 font-light tracking-tight max-w-3xl">
+                    {interestTags.join(' / ')}
+                </p>
+            </div>
 
-                <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-sm font-bold tracking-widest uppercase text-white px-4">
+            {/* Bottom row: socials + scroll cue */}
+            <div className="relative z-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-12 text-white">
+                <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs md:text-sm tracking-[0.18em] uppercase">
                     <a href={profileData.socialLinks.github} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[var(--accent)] transition-colors">GitHub</a>
                     <a href={profileData.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[var(--accent)] transition-colors">Facebook</a>
                     <a href={profileData.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[var(--accent)] transition-colors">Instagram</a>
                     <a href={profileData.socialLinks.youtube} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[var(--accent)] transition-colors">YouTube</a>
                 </div>
+                <div className="flex items-center gap-3 text-xs tracking-[0.18em] uppercase text-white/80">
+                    <span>Scroll</span>
+                    <ArrowDown className="w-4 h-4" />
+                </div>
             </div>
-
-            <div className="absolute bottom-8 md:bottom-12 z-10 animate-[bounce_1s_ease-in-out_3]">
-                <ArrowDown className="w-6 h-6 md:w-8 md:h-8 text-[var(--accent)]" />
-            </div>
-        </Section>
+        </section>
     );
 }

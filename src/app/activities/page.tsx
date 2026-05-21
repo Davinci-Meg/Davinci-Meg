@@ -10,78 +10,45 @@ function ActivitiesPageContent() {
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <div className="max-w-screen-xl mx-auto px-6 md:px-12 py-24">
+      <div className="max-w-screen-2xl mx-auto px-6 md:px-12 py-24 md:py-32">
         <Link
           href="/#activities"
-          className="inline-flex items-center gap-2 text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors mb-12"
+          className="inline-flex items-center gap-2 text-xs tracking-[0.18em] uppercase text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors mb-16 md:mb-24"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span className="text-sm font-medium">Portfolio</span>
+          <span>Portfolio</span>
         </Link>
 
-        <h1 className="text-section-title mb-16">{t('sections.activities')}</h1>
+        <p className="text-eyebrow mb-8">Index / Activities</p>
+        <h1 className="text-section-title mb-20 md:mb-32">{t('sections.activities')}</h1>
 
-        {/* Desktop: table */}
-        <div className="hidden md:block">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="border-b-2 border-[var(--card-border)]">
-                <th className="text-left py-3 pr-6 text-sm font-bold uppercase tracking-wider text-[var(--foreground)]/60">
-                  {currentLanguage === 'ja' ? 'タイトル' : 'Title'}
-                </th>
-                <th className="text-left py-3 pr-6 text-sm font-bold uppercase tracking-wider text-[var(--foreground)]/60 w-48">
-                  {currentLanguage === 'ja' ? '役割' : 'Role'}
-                </th>
-                <th className="w-10"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {activitiesData.map((activity) => (
-                <tr
-                  key={activity.id}
-                  className="border-b border-[var(--card-border)] hover:bg-[var(--card-bg)] transition-colors"
-                >
-                  <td className="py-4 pr-6 font-medium">
-                    {activity.title[currentLanguage]}
-                  </td>
-                  <td className="py-4 pr-6 text-[var(--accent)]">
-                    {activity.role[currentLanguage]}
-                  </td>
-                  <td className="py-4">
-                    <a
-                      href={activity.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[var(--foreground)]/40 hover:text-[var(--accent)] transition-colors"
-                    >
-                      <ArrowUpRight className="w-4 h-4" />
-                    </a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="grid grid-cols-12 gap-4 md:gap-8 pb-4 border-b border-[var(--rule)] text-xs tracking-[0.18em] uppercase text-[var(--foreground-muted)]">
+          <span className="col-span-8">{currentLanguage === 'ja' ? 'タイトル' : 'Title'}</span>
+          <span className="hidden md:block md:col-span-3">{currentLanguage === 'ja' ? '役割' : 'Role'}</span>
         </div>
 
-        {/* Mobile: card list */}
-        <div className="md:hidden space-y-4">
+        <ul>
           {activitiesData.map((activity) => (
-            <a
-              key={activity.id}
-              href={activity.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block p-4 border border-[var(--card-border)] rounded-xl hover:bg-[var(--card-bg)] transition-colors"
-            >
-              <h3 className="font-medium mb-1 leading-tight">
-                {activity.title[currentLanguage]}
-              </h3>
-              <p className="text-sm text-[var(--accent)]">
-                {activity.role[currentLanguage]}
-              </p>
-            </a>
+            <li key={activity.id} className="border-b border-[var(--rule)] group">
+              <a
+                href={activity.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="grid grid-cols-12 gap-4 md:gap-8 py-5 md:py-6 items-baseline cursor-pointer transition-colors hover:bg-[var(--rule)]/30"
+              >
+                <h3 className="col-span-12 md:col-span-8 text-base md:text-xl font-medium leading-snug tracking-tight group-hover:text-[var(--accent)] transition-colors">
+                  {activity.title[currentLanguage]}
+                </h3>
+                <p className="col-span-10 md:col-span-3 text-sm md:text-base text-[var(--foreground-muted)]">
+                  {activity.role[currentLanguage]}
+                </p>
+                <span className="col-span-2 md:col-span-1 flex justify-end text-[var(--foreground-muted)] group-hover:text-[var(--accent)] transition-all duration-300 group-hover:translate-x-1">
+                  <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5" />
+                </span>
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

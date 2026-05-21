@@ -3,7 +3,6 @@
 import { useTranslation } from '@/hooks/useTranslation';
 import { activitiesData } from '@/lib/data/activities';
 import { Section } from '@/components/ui/Section';
-import { Card } from '@/components/ui/Card';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
@@ -12,41 +11,42 @@ export function Activities() {
   const selectedActivities = activitiesData.filter(a => a.selected);
 
   return (
-    <Section id="activities" className="bg-[var(--card-bg)]">
-      <div className="max-w-screen-xl mx-auto px-6 md:px-12">
-        <h2 className="text-section-title mb-12">
-          {t('sections.activities')}
-        </h2>
+    <Section id="activities">
+      <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
+        <p className="text-eyebrow mb-8">06 / Activities</p>
+        <h2 className="text-section-title mb-20 md:mb-32">{t('sections.activities')}</h2>
 
-        <div className="grid grid-cols-1 gap-6">
+        <ul className="border-t border-[var(--rule)]">
           {selectedActivities.map((activity) => (
-            <Card key={activity.id} className="flex flex-col justify-between h-full group">
-              <div>
-                <h3 className="font-bold text-xl mb-2 leading-tight">
-                  {activity.title[currentLanguage]}
-                </h3>
-                <p className="text-[var(--accent)] font-medium mb-4">
-                  {activity.role[currentLanguage]}
-                </p>
-              </div>
+            <li key={activity.id} className="border-b border-[var(--rule)] group">
               <a
                 href={activity.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer inline-flex items-center text-sm font-bold uppercase tracking-wider mt-4 group-hover:text-[var(--accent)] transition-colors"
+                className="grid grid-cols-12 gap-4 md:gap-8 py-6 md:py-8 items-baseline cursor-pointer transition-colors hover:bg-[var(--rule)]/30"
               >
-                {t('ui.viewDetails')} <ArrowUpRight className="ml-1 w-4 h-4" />
+                <div className="col-span-12 md:col-span-8">
+                  <h3 className="text-lg md:text-2xl font-medium leading-snug tracking-tight group-hover:text-[var(--accent)] transition-colors">
+                    {activity.title[currentLanguage]}
+                  </h3>
+                </div>
+                <p className="col-span-10 md:col-span-3 text-sm md:text-base text-[var(--foreground-muted)]">
+                  {activity.role[currentLanguage]}
+                </p>
+                <span className="col-span-2 md:col-span-1 flex justify-end text-[var(--foreground-muted)] group-hover:text-[var(--accent)] transition-all duration-300 group-hover:translate-x-1">
+                  <ArrowUpRight className="w-5 h-5" />
+                </span>
               </a>
-            </Card>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 md:mt-16">
           <Link
             href="/activities"
-            className="inline-flex items-center gap-2 text-[var(--accent)] font-bold text-lg hover:underline transition-colors"
+            className="inline-flex items-center gap-2 text-sm tracking-[0.18em] uppercase text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
           >
-            {t('ui.viewAll')} <ArrowRight className="w-5 h-5" />
+            {t('ui.viewAll')} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

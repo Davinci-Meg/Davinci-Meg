@@ -1,31 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FAFAFA;
-  --foreground: #050505;
+  --background: #FFFFFF;
+  --foreground: #0A0A0A;
+  --foreground-muted: #6B6B6B;
   --accent: #2563EB;
-  /* Deep Blue - Default */
-  --card-bg: #FFFFFF;
-  --card-border: #E5E5E5;
+  --rule: #E5E5E5;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
   --color-accent: var(--accent);
-  --color-card-bg: var(--card-bg);
-  --color-card-border: var(--card-border);
+  --color-rule: var(--rule);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-jp: var(--font-noto-sans-jp);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #050505;
+    --background: #0A0A0A;
     --foreground: #FAFAFA;
+    --foreground-muted: #9A9A9A;
     --accent: #3B82F6;
-    --card-bg: #0A0A0A;
-    --card-border: #262626;
+    --rule: #1F1F1F;
   }
 }
 
@@ -42,45 +42,64 @@ body {
   padding: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), sans-serif;
-  line-height: 1.5;
+  font-family: var(--font-geist-sans), var(--font-noto-sans-jp), system-ui, sans-serif;
+  line-height: 1.55;
+  font-feature-settings: "kern" 1, "palt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Swiss Modern Utilities */
-.swiss-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.swiss-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 1.5rem;
-  /* Rounded corners */
-  padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.swiss-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
-}
-
 .text-huge {
-  font-size: clamp(3rem, 8vw, 8rem);
-  font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -0.04em;
+  font-size: clamp(3.5rem, 13vw, 13rem);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
 }
 
 .text-section-title {
-  font-size: clamp(2rem, 4vw, 4rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  margin-bottom: 2rem;
+  font-size: clamp(2.25rem, 6vw, 5.5rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.text-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--foreground-muted);
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 0;
+}
+
+.list-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--rule);
+  transition: padding 0.3s ease;
+}
+
+.list-row:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.list-row:hover .list-row-arrow {
+  transform: translateX(4px);
+  color: var(--accent);
+}
+
+.list-row-arrow {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {

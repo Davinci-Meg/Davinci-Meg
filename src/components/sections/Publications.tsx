@@ -3,33 +3,36 @@
 import { useTranslation } from '@/hooks/useTranslation';
 import { publicationsData } from '@/lib/data/publications';
 import { Section } from '@/components/ui/Section';
-import { Card } from '@/components/ui/Card';
 
 export function Publications() {
   const { t, currentLanguage } = useTranslation();
 
   return (
-    <Section id="publications" className="bg-[var(--background)]">
-      <div className="max-w-screen-xl mx-auto px-6 md:px-12">
-        <h2 className="text-section-title mb-12">
-          {t('sections.publications')}
-        </h2>
+    <Section id="publications">
+      <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
+        <p className="text-eyebrow mb-8">03 / Publications</p>
+        <h2 className="text-section-title mb-20 md:mb-32">{t('sections.publications')}</h2>
 
-        <div className="grid gap-6">
+        <ul className="border-t border-[var(--rule)]">
           {publicationsData.map((publication) => (
-            <Card key={publication.id} className="cursor-pointer group hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
-              <p className="text-sm font-mono text-gray-500 mb-2">
+            <li
+              key={publication.id}
+              className="border-b border-[var(--rule)] py-8 md:py-10 grid grid-cols-12 gap-4 md:gap-8"
+            >
+              <p className="col-span-12 md:col-span-3 text-xs md:text-sm font-mono text-[var(--foreground-muted)] leading-relaxed">
                 {publication.authors[currentLanguage]}
               </p>
-              <h3 className="font-bold text-xl md:text-2xl mb-3 leading-tight group-hover:text-[var(--accent)] transition-colors">
-                &ldquo;{publication.title[currentLanguage]}&rdquo;
-              </h3>
-              <p className="text-lg font-medium">
-                {publication.venue[currentLanguage]}
-              </p>
-            </Card>
+              <div className="col-span-12 md:col-span-9">
+                <h3 className="text-xl md:text-3xl font-medium leading-snug tracking-tight mb-3">
+                  &ldquo;{publication.title[currentLanguage]}&rdquo;
+                </h3>
+                <p className="text-sm md:text-base text-[var(--foreground-muted)]">
+                  {publication.venue[currentLanguage]}
+                </p>
+              </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </Section>
   );

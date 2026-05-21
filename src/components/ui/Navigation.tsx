@@ -52,23 +52,23 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-4 left-4 right-4 bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--card-border)] rounded-2xl z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-[var(--background)]/85 backdrop-blur-md border-b border-[var(--rule)] z-50">
       <div className="w-full px-6 md:px-12">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-14 md:h-16">
           <a
             href="#"
-            className="font-bold text-xl text-[var(--foreground)]"
+            className="text-sm md:text-base font-medium tracking-tight text-[var(--foreground)]"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            Portfolio
+            Megumu Isshiki
           </a>
 
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6 md:gap-10">
             {/* Desktop Navigation */}
-            <div className="hidden xl:flex items-center space-x-8">
+            <div className="hidden xl:flex items-center gap-8">
               {navigationItems.map((item) => (
                 <a
                   key={item.key}
@@ -77,10 +77,10 @@ export function Navigation() {
                     e.preventDefault();
                     handleScroll(item.href);
                   }}
-                  className={`transition-colors cursor-pointer ${
+                  className={`relative text-sm tracking-tight cursor-pointer transition-colors ${
                     activeSection === item.key
-                      ? 'text-[var(--accent)] font-medium'
-                      : 'text-[var(--foreground)]/60 hover:text-[var(--foreground)] '
+                      ? 'text-[var(--foreground)] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:bg-[var(--accent)]'
+                      : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)]'
                   }`}
                 >
                   {item.label}
@@ -95,15 +95,15 @@ export function Navigation() {
             {/* Mobile/Tablet menu button */}
             <button
               onClick={toggleMobileMenu}
-              className="xl:hidden flex items-center justify-center p-2"
+              className="xl:hidden flex items-center justify-center p-2 -mr-2"
               aria-label="メニューを開く"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                  strokeWidth={1.5}
+                  d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 7h16M4 17h16"}
                 />
               </svg>
             </button>
@@ -111,7 +111,7 @@ export function Navigation() {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`xl:hidden pb-4 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+        <div className={`xl:hidden pb-6 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
           {navigationItems.map((item) => (
             <a
               key={item.key}
@@ -120,18 +120,18 @@ export function Navigation() {
                 e.preventDefault();
                 handleScroll(item.href);
               }}
-              className={`block py-2 transition-colors cursor-pointer ${
+              className={`block py-3 text-base tracking-tight border-t border-[var(--rule)] cursor-pointer transition-colors ${
                 activeSection === item.key
-                  ? 'text-[var(--accent)] font-medium'
-                  : 'text-[var(--foreground)]/60 hover:text-[var(--foreground)]'
+                  ? 'text-[var(--foreground)]'
+                  : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)]'
               }`}
             >
               {item.label}
             </a>
           ))}
 
-          <div className="md:hidden flex items-center space-x-2 pt-4 border-t border-[var(--card-border)] mt-4">
-            <span className="text-sm text-[var(--foreground)]/60">Language:</span>
+          <div className="md:hidden flex items-center gap-3 pt-4 border-t border-[var(--rule)] mt-2">
+            <span className="text-xs uppercase tracking-widest text-[var(--foreground-muted)]">Language</span>
             <LanguageToggle />
           </div>
         </div>

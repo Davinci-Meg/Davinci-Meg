@@ -13,95 +13,47 @@ function AwardsPageContent() {
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <div className="max-w-screen-xl mx-auto px-6 md:px-12 py-24">
+      <div className="max-w-screen-2xl mx-auto px-6 md:px-12 py-24 md:py-32">
         <Link
           href="/#awards"
-          className="inline-flex items-center gap-2 text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors mb-12"
+          className="inline-flex items-center gap-2 text-xs tracking-[0.18em] uppercase text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors mb-16 md:mb-24"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span className="text-sm font-medium">Portfolio</span>
+          <span>Portfolio</span>
         </Link>
 
-        <h1 className="text-section-title mb-16">Awards & Honors</h1>
+        <p className="text-eyebrow mb-8">Index / Awards</p>
+        <h1 className="text-section-title mb-20 md:mb-32">Awards &amp; Honors</h1>
 
-        {/* Desktop: table */}
-        <div className="hidden md:block">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="border-b-2 border-[var(--card-border)]">
-                <th className="text-left py-3 pr-6 text-sm font-bold uppercase tracking-wider text-[var(--foreground)]/60 w-20">
-                  {currentLanguage === 'ja' ? '年' : 'Year'}
-                </th>
-                <th className="text-left py-3 pr-6 text-sm font-bold uppercase tracking-wider text-[var(--foreground)]/60">
-                  {currentLanguage === 'ja' ? 'タイトル' : 'Title'}
-                </th>
-                <th className="text-left py-3 pr-6 text-sm font-bold uppercase tracking-wider text-[var(--foreground)]/60 w-64">
-                  {currentLanguage === 'ja' ? '受賞' : 'Award'}
-                </th>
-                <th className="w-10"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {years.map((year) =>
-                groupedAwards[year].map((award, index) => (
-                  <tr
-                    key={award.id}
-                    className="border-b border-[var(--card-border)] hover:bg-[var(--card-bg)] transition-colors"
-                  >
-                    <td className="py-4 pr-6 text-[var(--foreground)]/40 font-bold tabular-nums">
-                      {index === 0 ? year : ''}
-                    </td>
-                    <td className="py-4 pr-6 font-medium">
-                      {award.title[currentLanguage]}
-                    </td>
-                    <td className="py-4 pr-6 text-[var(--accent)]">
-                      {award.prize[currentLanguage]}
-                    </td>
-                    <td className="py-4">
-                      <a
-                        href={award.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[var(--foreground)]/40 hover:text-[var(--accent)] transition-colors"
-                      >
-                        <ArrowUpRight className="w-4 h-4" />
-                      </a>
-                    </td>
-                  </tr>
-                ))
-              )}
-            </tbody>
-          </table>
-        </div>
-
-        {/* Mobile: card list */}
-        <div className="md:hidden space-y-12">
+        <div>
           {years.map((year) => (
-            <div key={year}>
-              <h2 className="text-4xl font-bold mb-6 text-gray-200 dark:text-gray-800">
+            <section key={year} className="mb-16 md:mb-24">
+              <h2 className="text-3xl md:text-5xl font-medium tabular-nums tracking-tight pb-4 border-b border-[var(--foreground)]">
                 {year}
               </h2>
-              <div className="space-y-4">
+              <ul>
                 {groupedAwards[year].map((award) => (
-                  <a
-                    key={award.id}
-                    href={award.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block p-4 border border-[var(--card-border)] rounded-xl hover:bg-[var(--card-bg)] transition-colors"
-                  >
-                    <h3 className="font-medium mb-1 leading-tight">
-                      {award.title[currentLanguage]}
-                    </h3>
-                    {award.prize[currentLanguage] && (
-                      <p className="text-sm text-[var(--accent)]">
+                  <li key={award.id} className="border-b border-[var(--rule)] group">
+                    <a
+                      href={award.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="grid grid-cols-12 gap-4 md:gap-8 py-6 md:py-8 items-baseline cursor-pointer transition-colors hover:bg-[var(--rule)]/30"
+                    >
+                      <p className="col-span-12 md:col-span-3 text-xs md:text-sm tracking-[0.12em] uppercase text-[var(--foreground-muted)]">
                         {award.prize[currentLanguage]}
                       </p>
-                    )}
-                  </a>
+                      <h3 className="col-span-10 md:col-span-8 text-base md:text-xl font-medium leading-snug tracking-tight group-hover:text-[var(--accent)] transition-colors">
+                        {award.title[currentLanguage]}
+                      </h3>
+                      <span className="col-span-2 md:col-span-1 flex justify-end text-[var(--foreground-muted)] group-hover:text-[var(--accent)] transition-all duration-300 group-hover:translate-x-1">
+                        <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5" />
+                      </span>
+                    </a>
+                  </li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </section>
           ))}
         </div>
       </div>

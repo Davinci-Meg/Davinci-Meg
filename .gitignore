@@ -55,3 +55,6 @@ cv/
 
 # Screenshots
 screenshot-*.png
+
+# Claude Code workspace
+tasks/
