@@ -57,7 +57,7 @@ export function Hero() {
             </div>
 
             {/* Title block */}
-            <div className="relative z-10 flex-1 flex flex-col justify-center max-w-screen-2xl w-full">
+            <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center max-w-screen-2xl w-full mx-auto">
                 <h1 className="text-huge text-white break-words mb-8 md:mb-10">
                     {profileData.name[currentLanguage]}
                 </h1>
