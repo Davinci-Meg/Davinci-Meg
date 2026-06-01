@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
 function ActivitiesPageContent() {
-  const { t, currentLanguage } = useTranslation();
+  const { currentLanguage } = useTranslation();
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
@@ -20,7 +20,7 @@ function ActivitiesPageContent() {
         </Link>
 
         <p className="text-eyebrow mb-8">Index / Activities</p>
-        <h1 className="text-section-title mb-20 md:mb-32">{t('sections.activities')}</h1>
+        <h1 className="text-section-title mb-20 md:mb-32">Exhibitions &amp; Activities</h1>
 
         <div className="grid grid-cols-12 gap-4 md:gap-8 pb-4 border-b border-[var(--rule)] text-xs tracking-[0.18em] uppercase text-[var(--foreground-muted)]">
           <span className="col-span-8">{currentLanguage === 'ja' ? 'タイトル' : 'Title'}</span>
