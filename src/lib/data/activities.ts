@@ -111,5 +111,18 @@ export const activitiesData: Activity[] = [
       en: 'Cooperation'
     },
     url: 'https://prtimes.jp/main/html/rd/p/000000090.000037875.html'
+  },
+  {
+    id: 'activity-10',
+    title: {
+      ja: 'takibi 札幌デジタルものづくり展覧会',
+      en: 'takibi Sapporo Digital Manufacturing Exhibition'
+    },
+    role: {
+      ja: '出展',
+      en: 'Exhibitor'
+    },
+    url: 'https://www.instagram.com/p/DY2IiScGS_y/?img_index=1',
+    selected: true
   }
 ];

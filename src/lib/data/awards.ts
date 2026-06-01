@@ -66,7 +66,7 @@ export const awardsData: Award[] = [
       ja: '最優秀賞',
       en: 'Best Award'
     },
-    url: 'https://x.com/Davinci_kcct/status/1913796393355059583',
+    url: 'https://www.nii.ac.jp/tatsujin/information/notice/202404301/',
     year: 2025,
     selected: true
   },
