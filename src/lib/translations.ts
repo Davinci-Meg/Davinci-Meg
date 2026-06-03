@@ -17,8 +17,8 @@ export const translations: TranslationKeys = {
     publications: { ja: 'Publication', en: 'Publication' },
     skills: { ja: 'Technical Skills', en: 'Technical Skills' },
     media: { ja: 'Media Coverage', en: 'Media Coverage' },
-    activities: { ja: 'Selected Exhibitions & Activities', en: 'Selected Exhibitions & Activities' },
-    projects: { ja: 'Creations', en: 'Creations' }
+    activities: { ja: 'Selected Activities', en: 'Selected Activities' },
+    projects: { ja: 'Selected Projects', en: 'Selected Projects' }
   },
   skills: {
     programming: { ja: 'Programming', en: 'Programming' },

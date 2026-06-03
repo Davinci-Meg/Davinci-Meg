@@ -14,26 +14,72 @@ export function Projects() {
     <Section id="projects">
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
         <p className="text-eyebrow mb-8">07 / Projects</p>
-        <h2 className="text-section-title mb-20 md:mb-32">{t('sections.projects')}</h2>
+        <h2 className="text-section-title mb-4 md:mb-6">{t('sections.projects')}</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="flex flex-col">
           {projectsData.map((project, index) => (
-            <div
+            <article
               key={project.id}
-              className="aspect-square relative overflow-hidden bg-[var(--rule)]/40 group"
+              className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 py-12 md:py-20 border-t border-[var(--rule)] first:border-t-0"
             >
-              <Image
-                src={getImagePath(project.imagePath)}
-                alt={project.alt[currentLanguage]}
-                fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                loading={index < 6 ? "eager" : "lazy"}
-                placeholder="blur"
-                blurDataURL={getBlurDataURL(project.imagePath)}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                quality={85}
-              />
-            </div>
+              <div className="md:col-span-6 lg:col-span-7">
+                <div className="aspect-[16/9] relative overflow-hidden bg-[var(--rule)]/40">
+                  <Image
+                    src={getImagePath(project.imagePath)}
+                    alt={project.alt[currentLanguage]}
+                    fill
+                    className="object-cover"
+                    loading={index < 2 ? 'eager' : 'lazy'}
+                    placeholder="blur"
+                    blurDataURL={getBlurDataURL(project.imagePath)}
+                    sizes="(max-width: 768px) 100vw, 58vw"
+                    quality={85}
+                  />
+                </div>
+              </div>
+
+              <div className="md:col-span-6 lg:col-span-5 flex flex-col">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="text-eyebrow">{project.category}</span>
+                  <span className="text-eyebrow">{project.year}</span>
+                </div>
+
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-medium leading-tight tracking-tight mb-2">
+                  {project.title[currentLanguage]}
+                </h3>
+                {project.titleEn && currentLanguage === 'ja' && (
+                  <p className="text-sm text-[var(--foreground-muted)] mb-6">
+                    {project.titleEn}
+                  </p>
+                )}
+
+                <p className="text-base md:text-[15px] leading-relaxed text-[var(--foreground)] mb-8">
+                  {project.description[currentLanguage]}
+                </p>
+
+                <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-3 text-sm mb-6 mt-auto">
+                  {project.exhibitions && project.exhibitions.length > 0 && (
+                    <>
+                      <dt className="text-eyebrow pt-1">
+                        {currentLanguage === 'ja' ? '展示・受賞' : 'Exhibitions'}
+                      </dt>
+                      <dd className="text-[var(--foreground)]">
+                        <ul className="space-y-1">
+                          {project.exhibitions.map((ex, i) => (
+                            <li key={i}>{ex[currentLanguage]}</li>
+                          ))}
+                        </ul>
+                      </dd>
+                    </>
+                  )}
+                  <dt className="text-eyebrow pt-1">
+                    {currentLanguage === 'ja' ? '役割' : 'Role'}
+                  </dt>
+                  <dd className="text-[var(--foreground)]">{project.role[currentLanguage]}</dd>
+                </dl>
+
+              </div>
+            </article>
           ))}
         </div>
       </div>

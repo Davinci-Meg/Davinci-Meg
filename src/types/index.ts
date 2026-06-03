@@ -57,8 +57,17 @@ export interface Activity {
 
 export interface Project {
   id: string;
+  title: Translation;
+  titleEn?: string;
+  category: string;
+  year: number;
+  description: Translation;
   imagePath: string;
   alt: Translation;
+  exhibitions?: Translation[];
+  role: Translation;
+  url?: string;
+  urlLabel?: Translation;
 }
 
 export interface TranslationKeys {

@@ -2,73 +2,104 @@ import { Project } from '@/types';
 
 export const projectsData: Project[] = [
   {
-    id: 'project-1',
-    imagePath: '/images/projects/project-1.webp',
-    alt: { ja: 'プロジェクト画像 1', en: 'Project Image 1' }
+    id: 'intercorporeality',
+    title: { ja: '伝染する身体性', en: 'Intercorporeality' },
+    titleEn: 'Intercorporeality',
+    category: 'Art',
+    year: 2026,
+    description: {
+      ja: '哲学者メルロ＝ポンティは、私たちの身体が見ることのなかで、無意識のうちに他者の身体と結びついていると述べた。彼が "間身体性" と呼んだこの作用のもとで、あくびが伝染するように、他者の身体の動きを知覚した瞬間、私たちはそれを自分の身体で生きはじめる。この作品はToFカメラのセンシングデータをもとに、二者の両手を時間的・空間的に再構成した。折り重なった手のアーカイブによって、私たちは他者の身体性を意識することができるのだろうか。',
+      en: 'Philosopher Merleau-Ponty described how our bodies, in the act of seeing, are unconsciously connected to the bodies of others. Under this effect he called "intercorporeality," the moment we perceive another\'s movement, we begin to live it in our own body. Using ToF camera sensing data, this work reconstructs two pairs of hands across time and space, layered into an archive that asks whether we can become aware of another\'s corporeality.',
+    },
+    imagePath: '/images/projects/works/intercorporeality/1.jpg',
+    alt: { ja: '伝染する身体性', en: 'Intercorporeality' },
+    exhibitions: [
+      { ja: 'takibi 札幌デジタルものづくり展覧会', en: 'takibi Sapporo Digital Making Exhibition' },
+    ],
+    role: { ja: '個人制作', en: 'Solo work' },
+    url: 'https://www.instagram.com/p/DY2IiScGS_y/?img_index=1',
+    urlLabel: { ja: 'Instagramで見る', en: 'View on Instagram' },
   },
   {
-    id: 'project-3',
-    imagePath: '/images/projects/project-3.webp',
-    alt: { ja: 'プロジェクト画像 3', en: 'Project Image 3' }
+    id: 'plant-haptic',
+    title: {
+      ja: '人と植物のインタラクションを促進するための触覚インタフェース',
+      en: 'A Haptic Interface to Foster Human–Plant Interaction',
+    },
+    titleEn: 'Haptic Interface for Human–Plant Interaction',
+    category: 'Research',
+    year: 2025,
+    description: {
+      ja: '国立情報学研究所が実施している研究プログラム「情報科学の達人プログラム」にて、触覚を介して「植物の生命感」を呈示することで人と自然の心理的なつながりを促進するインタフェースを開発した。従来の科学や哲学は人間中心的な視点から植物をモノや資源として扱う傾向にある。本研究では、植物の生命性を触覚を介して伝えることで共在感覚を喚起し、「自然は相対する存在ではなく、共同体である」という視点を提示する。実証実験を行い、この触覚インタフェースの使用により人と自然の心理的なつながりが向上することを確認した。',
+      en: 'In NII\'s "Masters of Informatics" program, I developed a haptic interface that conveys the vitality of plants, fostering psychological connection between people and nature. While traditional science and philosophy tend to treat plants as objects or resources from a human-centered perspective, this research evokes a sense of co-presence through touch — presenting nature not as an opposing entity but as a community. Empirical experiments confirmed that the interface improves the psychological connection between humans and nature.',
+    },
+    imagePath: '/images/projects/works/plant-haptic/4.jpg',
+    alt: { ja: '触覚インタフェース', en: 'Haptic Interface' },
+    exhibitions: [
+      { ja: '情報処理学会 第87回全国大会「情報科学の達人 5.0」最優秀発表賞', en: 'IPSJ 87th National Convention — Best Presentation Award' },
+      { ja: 'NoMaps 2025 特別展「まだ名前のない世界」', en: 'NoMaps 2025 Special Exhibition' },
+    ],
+    role: { ja: '個人制作', en: 'Solo work' },
+    url: 'https://www.nii.ac.jp/tatsujin/2025/03/245e9fbde40e34364e59d834a1816c59378cafe5.pdf',
+    urlLabel: { ja: '研究レポートを読む', en: 'Read research report' },
   },
   {
-    id: 'project-4',
-    imagePath: '/images/projects/project-4.webp',
-    alt: { ja: 'プロジェクト画像 4', en: 'Project Image 4' }
+    id: 'planet',
+    title: { ja: 'PlaNet：植物があなたの家族になる', en: 'PlaNet: Your Plant Becomes Family' },
+    titleEn: 'PlaNet',
+    category: 'Design',
+    year: 2025,
+    description: {
+      ja: '人と植物の新たなインタラクションをデザインし、"植物が私たちの家族になる未来"というビジョンのもと、人の振る舞いや健康状態によって反応する植物ロボットを開発した。',
+      en: 'Designed a new mode of human–plant interaction. Under the vision of "a future where plants become our family," I developed a plant robot that responds to human behavior and health.',
+    },
+    imagePath: '/images/projects/works/planet/1.jpg',
+    alt: { ja: 'PlaNet 植物ロボット', en: 'PlaNet plant robot' },
+    exhibitions: [
+      { ja: 'GUGEN 2024 学生賞', en: 'GUGEN 2024 Student Award' },
+    ],
+    role: { ja: '代表者', en: 'Project lead' },
+    url: 'https://gugen.jp/subscriptions/work/1379',
+    urlLabel: { ja: 'GUGENで見る', en: 'View on GUGEN' },
   },
   {
-    id: 'project-5',
-    imagePath: '/images/projects/project-5.webp',
-    alt: { ja: 'プロジェクト画像 5', en: 'Project Image 5' }
+    id: 'tele-plant',
+    title: { ja: '瞬間憑依できる植物アバタ Tele-Plant', en: 'Tele-Plant: A Plant Avatar for Instant Embodiment' },
+    titleEn: 'Tele-Plant',
+    category: 'Research',
+    year: 2025,
+    description: {
+      ja: '「関西テック・クリエイター・チャレンジ」 Cybernetic Avatarコースにて、「瞬間憑依できる植物アバタ Tele-Plant」の開発に取り組んだ。このプロジェクトでは、ヘッドマウントディスプレイ（HMD）を用いて植物をアバタ化し、プロテウス効果と呼ばれる心理的効果を促すことで、自然への共感を醸成することを試みた。大阪ATC（ショッピングモール）で実証試験を実施し、半構造化インタビューを通じて、このシステムが自然への共感を醸成することを確認した。',
+      en: 'Developed as part of the Kansai Tech Creator Challenge (Cybernetic Avatar track), Tele-Plant uses a head-mounted display to embody users as plants, leveraging the Proteus effect to foster empathy toward nature. Field trials at Osaka ATC, combined with semi-structured interviews, confirmed the system\'s effect on empathy toward the natural world.',
+    },
+    imagePath: '/images/projects/works/tele-plant/1.jpg',
+    alt: { ja: 'Tele-Plant', en: 'Tele-Plant' },
+    exhibitions: [
+      { ja: '関西テック・クリエイター・チャレンジ Cybernetic Avatarコース', en: 'Kansai Tech Creator Challenge — Cybernetic Avatar Track' },
+    ],
+    role: { ja: '代表者', en: 'Project lead' },
+    url: 'https://kansai-tcc.dle.or.jp/2024/ca/',
+    urlLabel: { ja: 'プロジェクトを見る', en: 'View project' },
   },
   {
-    id: 'project-6',
-    imagePath: '/images/projects/project-6.webp',
-    alt: { ja: 'プロジェクト画像 6', en: 'Project Image 6' }
+    id: 'monography',
+    title: { ja: 'MonoGraphy', en: 'MonoGraphy' },
+    titleEn: 'MonoGraphy',
+    category: 'Art',
+    year: 2025,
+    description: {
+      ja: '生成AIとのインタラクションを通じて"個人の記憶"をオブジェとして具現化するシステム「MonoGraphy」を開発した。すでにWebアプリとしてローンチしており、100名規模のインタビューと2度の展示会、ワークショップでの検証を経ており、今後は継続開発と社会実装を見据えた仮説検証を進める。',
+      en: 'MonoGraphy is a system that materializes personal memories as objects through interaction with generative AI. Already launched as a web app, it has been validated through 100+ interviews, two exhibitions, and workshops. Continued development and social implementation are now underway.',
+    },
+    imagePath: '/images/projects/works/monography/1.jpg',
+    alt: { ja: 'MonoGraphy', en: 'MonoGraphy' },
+    exhibitions: [
+      { ja: '第6回 札幌学院大学 学生ビジネスプランコンテスト 最優秀賞', en: 'Sapporo Gakuin University Student Business Plan Contest — Grand Prize' },
+      { ja: 'InterBEE 2025 展示', en: 'InterBEE 2025 Exhibition' },
+      { ja: 'NoMaps 2025 特別展「まだ名前のない世界」', en: 'NoMaps 2025 Special Exhibition' },
+    ],
+    role: { ja: '個人制作', en: 'Solo work' },
+    url: 'https://www.instagram.com/monography_ai/',
+    urlLabel: { ja: 'Instagramで見る', en: 'View on Instagram' },
   },
-  {
-    id: 'project-7',
-    imagePath: '/images/projects/project-7.webp',
-    alt: { ja: 'プロジェクト画像 7', en: 'Project Image 7' }
-  },
-  {
-    id: 'project-8',
-    imagePath: '/images/projects/project-8.webp',
-    alt: { ja: 'プロジェクト画像 8', en: 'Project Image 8' }
-  },
-  {
-    id: 'project-13',
-    imagePath: '/images/projects/project-13.webp',
-    alt: { ja: 'プロジェクト画像 13', en: 'Project Image 13' }
-  },
-  {
-    id: 'project-14',
-    imagePath: '/images/projects/project-14.webp',
-    alt: { ja: 'プロジェクト画像 14', en: 'Project Image 14' }
-  },
-  {
-    id: 'project-15',
-    imagePath: '/images/projects/project-15.webp',
-    alt: { ja: 'プロジェクト画像 15', en: 'Project Image 15' }
-  },
-  {
-    id: 'project-16',
-    imagePath: '/images/projects/project-16-robot.webp',
-    alt: { ja: 'ロボット外観', en: 'Robot' }
-  },
-  {
-    id: 'project-17',
-    imagePath: '/images/projects/project-17-certificate.webp',
-    alt: { ja: '修了証書', en: 'Certificate' }
-  },
-  {
-    id: 'project-18',
-    imagePath: '/images/projects/project-18.webp',
-    alt: { ja: 'プロジェクト画像 18', en: 'Project Image 18' }
-  },
-  {
-    id: 'project-19',
-    imagePath: '/images/projects/project-19.webp',
-    alt: { ja: 'プロジェクト画像 19', en: 'Project Image 19' }
-  }
 ];
