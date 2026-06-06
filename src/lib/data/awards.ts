@@ -220,7 +220,7 @@ export const awardsData: Award[] = [
   {
     id: 'award-2024-8',
     title: {
-      ja: '国内最大級ハードウェアコンテストGUGEN2024',
+      ja: 'ハードウェアコンテストGUGEN2024',
       en: 'GUGEN2024'
     },
     prize: {
