@@ -17,7 +17,7 @@ const HERO_IMAGES = [
 
 export function Hero() {
     const { currentLanguage } = useTranslation();
-    const interestTags = ['Human Computer Interaction', 'Robotics', 'Umwelt'];
+    const interestTags = ['Human Computer Interaction', 'More-than-Human Design', 'Art & Technology'];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
