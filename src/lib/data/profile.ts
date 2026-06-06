@@ -14,8 +14,8 @@ export const profileData: ProfileData = {
     en: 'Division of Computer Science and Information Technology, Hokkaido University'
   },
   fieldOfInterest: {
-    ja: 'Human Computer Interaction / More-than-Human Design / Art & Technology',
-    en: 'Human Computer Interaction / More-than-Human Design / Art & Technology'
+    ja: 'Human Computer Interaction / More-Than-Human Design / Art & Technology',
+    en: 'Human Computer Interaction / More-Than-Human Design / Art & Technology'
   },
   socialLinks: {
     github: 'https://github.com/Davinci-Meg',

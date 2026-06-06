@@ -21,8 +21,8 @@ const notoSansJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: "Megumu Isshiki - Portfolio",
-  description: "Portfolio of Megumu Isshiki (一色潤), a researcher in Human Computer Interaction, More-than-Human Design, and Art & Technology at Hokkaido University.",
-  keywords: ["Megumu Isshiki", "一色潤", "Human Computer Interaction", "More-than-Human Design", "Art & Technology", "Portfolio", "Hokkaido University"],
+  description: "Portfolio of Megumu Isshiki (一色潤), a researcher in Human Computer Interaction, More-Than-Human Design, and Art & Technology at Hokkaido University.",
+  keywords: ["Megumu Isshiki", "一色潤", "Human Computer Interaction", "More-Than-Human Design", "Art & Technology", "Portfolio", "Hokkaido University"],
   authors: [{ name: "Megumu Isshiki", url: "https://github.com/Davinci-Meg" }],
   creator: "Megumu Isshiki",
   openGraph: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://megumu-isshiki-portfolio.vercel.app",
     title: "Megumu Isshiki - Portfolio",
-    description: "Portfolio of Megumu Isshiki (一色潤), a researcher in Human Computer Interaction, More-than-Human Design, and Art & Technology at Hokkaido University.",
+    description: "Portfolio of Megumu Isshiki (一色潤), a researcher in Human Computer Interaction, More-Than-Human Design, and Art & Technology at Hokkaido University.",
     siteName: "Megumu Isshiki Portfolio",
     images: [
       {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Megumu Isshiki - Portfolio",
-    description: "Portfolio of Megumu Isshiki (一色潤), a researcher in Human Computer Interaction, More-than-Human Design, and Art & Technology.",
+    description: "Portfolio of Megumu Isshiki (一色潤), a researcher in Human Computer Interaction, More-Than-Human Design, and Art & Technology.",
     images: ["/images/profile/profile-rectangle-v2.webp"]
   },
   robots: {
